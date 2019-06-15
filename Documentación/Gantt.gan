@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Sistema de Inventario de Produccion" company="" webLink="http://" view-date="2019-06-01" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.10" locale="es_ES">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Nombre" width="114" order="0"/>
+        <field id="tpd4" name="Fecha de inicio" width="109" order="1"/>
+        <field id="tpd5" name="Fecha de fin" width="73" order="2"/>
+        <timeline><![CDATA[1]]></timeline>
+        <option id="color.recent"><![CDATA[#cc0000 #66ff66]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nombre" width="210" order="0"/>
+        <field id="1" name="Función" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="1" name="Tarea 1" color="#66ff66" meeting="false" start="2019-06-03" duration="5" complete="0" thirdDate="2019-05-03" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[- Planeación del proyecto.
+- Establecimiento del tema.]]></notes>
+        </task>
+        <task id="9" name="Tarea 2" color="#8cb6ce" meeting="false" start="2019-06-04" duration="10" complete="0" thirdDate="2019-06-03" thirdDate-constraint="0" priority="2" expand="true">
+            <notes><![CDATA[- Viabilidad del proyecto.
+- Comienzo de documentación.
+- Objetivos.
+- Alcances]]></notes>
+        </task>
+        <task id="14" name="Tarea 3.1" color="#cc0000" meeting="false" start="2019-06-10" duration="5" complete="0" thirdDate="2019-06-03" thirdDate-constraint="0" priority="4" expand="true">
+            <notes><![CDATA[- Modelado de la Base de Datos.
+- Correcciones en la documentación.
+
+Encargados
+Johao Perlaza
+Joel Simbaña]]></notes>
+        </task>
+        <task id="19" name="Tarea 3.2" color="#8cb6ce" meeting="false" start="2019-06-10" duration="5" complete="0" thirdDate="2019-05-30" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[- Historias de Usuarios
+
+Encargados
+- Sedric Oña
+- Joel Simbaña
+- Paola Narvaez]]></notes>
+        </task>
+        <task id="22" name="Tarea 4" color="#8cb6ce" meeting="false" start="2019-06-17" duration="1" complete="0" thirdDate="2019-06-17" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[- Entrega de documentación.
+
+
+Encargados
+- Johao Perlaza
+- Joel Simbaña
+- Paola Narvaez
+- Sedric Oña]]></notes>
+        </task>
+        <task id="24" name="Tarea 5" color="#8cb6ce" meeting="false" start="2019-06-17" duration="5" complete="0" thirdDate="2019-06-17" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[- Creación de prototipos
+
+Encargados
+- Paola Narvaez
+- Sedric Oña]]></notes>
+        </task>
+        <task id="25" name="Tarea 6" color="#8cb6ce" meeting="false" start="2019-06-24" duration="5" complete="0" thirdDate="2019-06-17" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[- Levantamiento del servidor
+
+Encargados
+- Johao Perlaza
+- Joel Simbaña]]></notes>
+        </task>
+        <task id="27" name="Tarea 7" color="#8cb6ce" meeting="false" start="2019-07-01" duration="15" complete="0" thirdDate="2019-06-24" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[- Creación de Front-end
+
+Encargados
+
+- Paola Narvaez
+- Sedric Oña]]></notes>
+        </task>
+        <task id="29" name="Tarea 8" color="#8cb6ce" meeting="false" start="2019-07-08" duration="15" complete="0" thirdDate="2019-07-08" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[- Enlazar servidor con Front-end
+
+Encargados
+
+- Johao Perlaza
+- Joel Simbaña]]></notes>
+        </task>
+        <task id="31" name="Tarea 9" color="#8cb6ce" meeting="false" start="2019-07-29" duration="5" complete="0" thirdDate="2019-07-29" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Pruebas y correcciones al sistema desarrollado
+
+Encargados
+- Johao Perlaza
+- Joel Simbaña
+- Paola Narvaez
+- Sedric Oña]]></notes>
+        </task>
+        <task id="34" name="Tarea 10" color="#8cb6ce" meeting="false" start="2019-07-31" duration="8" complete="0" thirdDate="2019-07-31" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Preparación recursos para presentación
+
+Encargados
+- Johao Perlaza
+- Joel Simbaña
+- Paola Narvaez
+- Sedric Oña]]></notes>
+            <depend id="37" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="37" name="Tarea 11" color="#8cb6ce" meeting="false" start="2019-08-12" duration="5" complete="0" thirdDate="2019-08-12" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Pruebas de funcionamiento.
+Análisis de cumplimiento de objetivos.
+
+Encargados
+- Johao Perlaza
+- Joel Simbaña
+- Paola Narvaez
+- Sedric Oña]]></notes>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
