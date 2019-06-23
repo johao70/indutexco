@@ -17,6 +17,6 @@ app.use((req, res, next) => {
     next()
 })
 
-app.use('/server', rutas)
+app.use('/indutexco', rutas)
 
 module.exports = app
