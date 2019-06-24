@@ -7,7 +7,7 @@
     "start": "nodemon ./instalacion/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Johao Nicolas Perlaza Zambrano",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
