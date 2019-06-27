@@ -65,26 +65,14 @@ let updateDatos = (req, res) => {
 let deleteDatos = (req, res) => {
     let tabla = req.body.tabla
     let id = req.body.id
-    let datos = req.body.datos
-    db.select().from(tabla)
-    .then( resultado => res.send(resultado))
-    .then(
-        db(tabla).where('id', id).update(datos)
-        .then(resultado => {
-            return res.status(200).json({
-                ok: true,
-                datos: resultado,
-                mensaje: `Se actualizaron los datos`
-            }) 
-        })
-        .catch((error) => {
-            return res.status(500).json({
-                ok: false,
-                datos: null,
-                mensaje: `Error del servidor: ${error}`
-            })
-        })
-    )
+    db.select().where('id', id).from(tabla)
+    .then(resultado => {
+        return res.status(200).json({
+            ok: true,
+            datos: resultado,
+            mensaje: `Datos eliminados`
+        }) 
+    })
 }
 
 module.exports = {
