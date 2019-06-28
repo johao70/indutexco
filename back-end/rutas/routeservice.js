@@ -6,6 +6,7 @@ let api = express.Router(),
 api.get('/prueba', control.getDatos)
 api.post('/prueba', control.postDatos)
 api.put('/prueba', control.updateDatos )
+api.delete('/prueba', control.deleteDatos)
 
 
 module.exports = api
