@@ -4,7 +4,7 @@ let api = express.Router(),
   contador = 0,
   repetidas = 'Rutas repetidas: \n'
 let rutas = [
-    crudRuta = require('./routeservice')
+    crudRuta = require('./routes_db')
 ]
 
 api = rutas[0]
