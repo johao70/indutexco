@@ -84,9 +84,18 @@ let deleteDatos = (req, res) => {
     })
 }
 
+// GET-PRUEBA
+let get_prueba = (req, res) => {
+    let tabla = req.query.tabla
+    let campo = req.query.campo
+    db.select(campo).from(tabla)
+    .then( resultado => res.send(resultado))
+}
+
 module.exports = {
     getDatos,
     postDatos,
     updateDatos,
-    deleteDatos
+    deleteDatos,
+    get_prueba
 }
