@@ -45,22 +45,20 @@ let postDatos = (req, res) => {
 let updateDatos = (req, res) => {
     let tabla = req.body.tabla
     let datos = req.body.datos
-    let contenedor = ""
     datos.forEach( element => {
-        contenedor = element
-    })
-    db(tabla).where('id', contenedor.id).update(contenedor)
-    .then( resultado => {
-        return res.status(200).json({
-            ok: true,
-            datos: resultado
+        db(tabla).where('id', element.id).update(contenedor)
+        .then( resultado => {
+            return res.status(200).json({
+                ok: true,
+                datos: resultado
+            })
         })
-    })
-    .catch((error) => {
-        return res.status(500).json({
-            ok: false,
-            datos: null,
-            mensaje: `Error del servidor: ${error}` 
+        .catch((error) => {
+            return res.status(500).json({
+                ok: false,
+                datos: null,
+                mensaje: `Error del servidor: ${error}` 
+            })
         })
     })
 }
