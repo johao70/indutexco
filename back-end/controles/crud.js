@@ -46,7 +46,7 @@ let updateDatos = (req, res) => {
     let tabla = req.body.tabla
     let datos = req.body.datos
     datos.forEach( element => {
-        db(tabla).where('id', element.id).update(contenedor)
+        db(tabla).where('id', element.id).update(element)
         .then( resultado => {
             return res.status(200).json({
                 ok: true,
