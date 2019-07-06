@@ -24,9 +24,8 @@ let getDatos = (req, res) => {
 
 let postDatos = (req, res) => {
     let tabla = req.body.tabla
-    let retorno = req.body.retorno
     let datos = req.body.datos
-    db(tabla).returning(retorno).insert(datos)
+    db(tabla).returning('id').insert(datos)
     .then(resultado => {
         return res.status(200).json({
             ok: true,
