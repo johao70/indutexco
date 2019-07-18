@@ -8,5 +8,7 @@ api.post('/route', control.postDatos)
 api.put('/route', control.updateDatos )
 api.delete('/route', control.deleteDatos)
 
+api.get('/login', control.getDatosbyID)
+
 
 module.exports = api
