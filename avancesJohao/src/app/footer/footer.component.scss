@@ -1,0 +1,18 @@
+@import "../../scss/variables";
+
+footer 
+{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 95%;
+    right: 0%;
+    width: 100%;
+    background-color: $silver;
+    text-align: center;
+}
+
+h2
+{
+    line-height: 0em;
+}
