@@ -11,6 +11,9 @@ import { PersonalComponent } from './body/personal/personal.component';
 import { InventarioComponent } from './body/inventario/inventario.component';
 import { OrdentrabajoComponent } from './body/ordentrabajo/ordentrabajo.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,9 @@ import { OrdentrabajoComponent } from './body/ordentrabajo/ordentrabajo.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
