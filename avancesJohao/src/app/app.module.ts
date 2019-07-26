@@ -7,9 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BodyComponent } from './body/body.component';
-import { OrdertrabajoComponent } from './body/ordertrabajo/ordertrabajo.component';
 import { PersonalComponent } from './body/personal/personal.component';
 import { InventarioComponent } from './body/inventario/inventario.component';
+import { OrdentrabajoComponent } from './body/ordentrabajo/ordentrabajo.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +18,9 @@ import { InventarioComponent } from './body/inventario/inventario.component';
     FooterComponent,
     SidebarComponent,
     BodyComponent,
-    OrdertrabajoComponent,
     PersonalComponent,
-    InventarioComponent
+    InventarioComponent,
+    OrdentrabajoComponent
   ],
   imports: [
     BrowserModule,
