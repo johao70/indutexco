@@ -11,11 +11,22 @@ import { environment } from '../../../environments/environment';
 export class InventarioComponent implements OnInit {
 
   respuesta: any[]
+  table_header: any
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getData()
+    this.table_header = [
+      {
+        id: 'id',
+        tela: 'Tela',
+        boton: 'Boton',
+        hilo: 'Hilo',
+        etiqueta: 'Etiqueta',
+        empleado: 'Empleado'
+      }
+    ]
   }
 
   getData = () => {

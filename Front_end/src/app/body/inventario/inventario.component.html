@@ -1,9 +1,13 @@
 <body>
         <div>
             <table class="table table-1">
-                <thead>
-                    <th>Nombre</th>
-                    <th>Comentario</th>
+                <thead *ngFor="let item of table_header">
+                    <th>{{item.id}}</th>
+                    <th>{{item.tela}}</th>
+                    <th>{{item.boton}}</th>
+                    <th>{{item.hilo}}</th>
+                    <th>{{item.etiqueta}}</th>
+                    <th>{{item.empleado}}</th>
                 </thead>
     
                 <tbody>
