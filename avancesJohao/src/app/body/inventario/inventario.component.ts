@@ -10,7 +10,7 @@ import { environment } from '../../../environments/environment';
 })
 export class InventarioComponent implements OnInit {
 
-  respuesta: any
+  respuesta: any[]
 
   constructor(private http: HttpClient) { }
 
@@ -19,8 +19,8 @@ export class InventarioComponent implements OnInit {
   }
 
   getData = () => {
-    let tabla = 'etiquetas'
-    this.http.get<any[]>(environment.API_URL + `?tabla=${tabla}`)
+    let tabla = 'productos'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
             this.respuesta = data.datos
         })
