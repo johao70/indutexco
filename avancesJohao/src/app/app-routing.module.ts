@@ -12,9 +12,6 @@ const routes: Routes = [
   { path: 'inventario', component: InventarioComponent },
   { path: 'ordentrabajo', component: OrdentrabajoComponent },
   { path: 'personal', component: PersonalComponent }
-  // { path: 'login', component: LoginComponent },
-  // { path: 'register', component: RegisterComponent },
-  // { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
