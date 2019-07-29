@@ -1,3 +1,25 @@
 <body>
-    <p>ordentrabajo works!</p>
+    <div>
+        <table class="table table-1">
+            <thead *ngFor="let item of table_header">
+                <th>{{item.id}}</th>
+                <th>{{item.tela}}</th>
+                <th>{{item.boton}}</th>
+                <th>{{item.hilo}}</th>
+                <th>{{item.etiqueta}}</th>
+                <th>{{item.empleado}}</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let item of respuesta">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.tela }}</td>
+                    <td>{{ item.boton }}</td>
+                    <td>{{ item.hilo }}</td>
+                    <td>{{ item.etiquetado }}</td>
+                    <td>{{ item.empleado }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>

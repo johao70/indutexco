@@ -1,3 +1,29 @@
 <body>
-    <p>personal works!</p>
+    <div>
+        <table class="table table-1">
+            <thead *ngFor="let item of table_header">
+                <th>{{item.id}}</th>
+                <th>{{item.nombre}}</th>
+                <th>{{item.apellido}}</th>
+                <th>{{item.direccion}}</th>
+                <th>{{item.telefono}}</th>
+                <th>{{item.idDepartamento}}</th>
+                <th>{{item.idCargo}}</th>
+                <th>{{item.idEstado}}</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let item of respuesta">
+                    <td>{{item.id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.apellido}}</td>
+                    <td>{{item.direccion}}</td>
+                    <td>{{item.telefono}}</td>
+                    <td>{{item.idDepartamento}}</td>
+                    <td>{{item.idCargo}}</td>
+                    <td>{{item.idEstado}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
