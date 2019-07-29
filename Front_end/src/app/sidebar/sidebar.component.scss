@@ -2,4 +2,4 @@
 @import "../../scss/mixins";
 
 @include sidebar($silver);
-@include buttons($black);
+@include buttons($black, $silver);
