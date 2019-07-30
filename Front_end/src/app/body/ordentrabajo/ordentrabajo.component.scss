@@ -13,8 +13,8 @@ body
     top:20%;
     padding: 20px; 
     position: absolute;
-    width: 30%;
-    height: 50%;
+    width: 27%;
+    height: 40%;
     left: 40px;
     .uno {
         padding: 10px;
@@ -49,10 +49,37 @@ body
     .seis {
         padding: 10px;
         position: absolute;
-        margin-top: 250px;
+        margin-left: 200px;
         width: 35%; 
     }
-    
+    .siete {
+        padding: 10px;
+        position: absolute;
+        margin-left: 200px;
+        margin-top: 50px;
+        width: 35%; 
+    }
+    .ocho {
+        padding: 10px;
+        position: absolute;
+        margin-top: 100px;
+        margin-left: 200px;
+        width: 35%; 
+    }
+    .nueve {
+        padding: 10px;
+        position: absolute;
+        margin-top: 150px;
+        margin-left: 200px;
+        width: 35%; 
+    }
+    .diez {
+        padding: 10px;
+        position: absolute;
+        margin-top: 200px;
+        margin-left: 200px;
+        width: 35%; 
+    }
 
    
 }
