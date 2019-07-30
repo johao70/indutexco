@@ -8,3 +8,51 @@ body
     margin: 0%;
     padding: 0%;
 }
+.options{
+    border: 1px solid;
+    top:20%;
+    padding: 20px; 
+    position: absolute;
+    width: 30%;
+    height: 50%;
+    left: 40px;
+    .uno {
+        padding: 10px;
+        position: absolute;
+        width: 35%;  
+    }
+    .dos {
+        padding: 10px;
+        position: absolute;
+        margin-top: 50px;
+        width: 35%; 
+        
+    }
+    .tres {
+        padding: 10px;
+        position: absolute;
+        margin-top: 100px;
+        width: 35%; 
+    }
+    .cuatro {
+        padding: 10px;
+        position: absolute;
+        margin-top: 150px;
+        width: 35%; 
+    }
+    .cinco {
+        padding: 10px;
+        position: absolute;
+        margin-top: 200px;
+        width: 35%; 
+    }
+    .seis {
+        padding: 10px;
+        position: absolute;
+        margin-top: 250px;
+        width: 35%; 
+    }
+    
+
+   
+}
