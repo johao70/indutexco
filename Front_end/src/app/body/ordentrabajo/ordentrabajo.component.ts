@@ -16,10 +16,10 @@ export class OrdentrabajoComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.getData()
+    this.getDataTable()
     this.table_header = [
       {
-        id: 'id',
+        id: 'N°',
         tela: 'Tela',
         boton: 'Boton',
         hilo: 'Hilo',
@@ -29,7 +29,7 @@ export class OrdentrabajoComponent implements OnInit {
     ]
   }
 
-  getData = () => {
+  getDataTable = () => {
     let tabla = 'productos'
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {

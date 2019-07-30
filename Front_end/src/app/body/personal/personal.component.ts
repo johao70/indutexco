@@ -19,7 +19,7 @@ export class PersonalComponent implements OnInit {
     this.getData()
     this.table_header = [
       {
-        id: 'id',
+        id: 'N°',
         nombre: 'Nombre',
         apellido: 'Apellido',
         direccion: 'Dirección',
