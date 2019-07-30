@@ -19,7 +19,7 @@ export class InventarioComponent implements OnInit {
     this.getData()
     this.table_header = [
       {
-        id: 'id',
+        id: 'N°',
         tela: 'Tela',
         boton: 'Boton',
         hilo: 'Hilo',

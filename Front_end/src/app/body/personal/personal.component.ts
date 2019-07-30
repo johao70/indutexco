@@ -24,15 +24,15 @@ export class PersonalComponent implements OnInit {
         apellido: 'Apellido',
         direccion: 'Dirección',
         telefono: 'Teléfono',
-        idDepartamento: 'idDepartamento',
-        idCargo: 'idCargo',
-        idEstado: 'idEstado'
+        // idDepartamento: 'idDepartamento',
+        // idCargo: 'idCargo',
+        // idEstado: 'idEstado'
       }
     ]
   }
 
   getData = () => {
-    let tabla = 'empleados'
+    let tabla = 'empleado'
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
             this.respuesta = data.datos
