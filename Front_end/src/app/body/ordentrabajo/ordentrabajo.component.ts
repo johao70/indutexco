@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ordentrabajo',
@@ -12,8 +13,9 @@ export class OrdentrabajoComponent implements OnInit {
 
   respuesta: any[]
   table_header: any
+  
 
-  constructor(private http: HttpClient) { }
+  constructor(private  http: HttpClient) { }
 
   ngOnInit() {
     this.getDataTable()
@@ -35,6 +37,10 @@ export class OrdentrabajoComponent implements OnInit {
         .subscribe(data => {
             this.respuesta = data.datos
         })
+
+    
   }
+
+  
 
 }
