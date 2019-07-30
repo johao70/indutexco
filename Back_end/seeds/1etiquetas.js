@@ -4,8 +4,8 @@ exports.seed = function(knex, Promise) {
       .then(function () {
         return knex('etiquetas').insert([
           {
-            nombre: 'PRUEBA',
-            comentario: 'PRUEBA - COMENTARIO'
+            nombre: 'etiqueta1',
+            comentario: 'comentario1'
           }
       ]);
     });
