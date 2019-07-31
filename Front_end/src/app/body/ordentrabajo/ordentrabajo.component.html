@@ -24,18 +24,16 @@
     </div>
     
     <div class="options">
-        <select class="uno" >
-            <option value="999">Seleccione </option>
-            <option value="1">TELA</option>
-            <option value="2">COBIJA</option>
-            <option value="3">PIJAMA</option>
+        <label>Telas</label>
+        <select class="uno">
+            <option value="999">Seleccione...</option>
+            <option value="i" *ngFor="let item of respuestaTelas; let i = index">{{item}}</option>
         </select>
 
-        <select class="dos" >
-            <option value="999">suave </option>
-            <option value="1">suave</option>
-            <option value="2">algodon</option>
-            <option value="3">nada</option>
+        <label>Botones</label>
+        <select class="dos">
+            <option value="999">Seleccione...</option>
+            <option value="i" *ngFor="let item of respuestaBotones; let i = index">{{item}}</option>
         </select>
 
         <select class="tres" >

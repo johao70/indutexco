@@ -11,14 +11,19 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class OrdentrabajoComponent implements OnInit {
 
-  respuesta: any[]
   table_header: any
+  respuesta: any[]
+  //OPTIONS
+  respuestaTelas: any[]
+  respuestaBotones: any[]
+  respuestaHilos: any[]
   
 
-  constructor(private  http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getDataTable()
+    this.getDataTelas()
     this.table_header = [
       {
         id: 'N°',
@@ -31,16 +36,38 @@ export class OrdentrabajoComponent implements OnInit {
     ]
   }
 
+  //TABLE
   getDataTable = () => {
     let tabla = 'productos'
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
             this.respuesta = data.datos
         })
-
-    
   }
 
-  
+  //OPTIONS
+  getDataTelas = () => {
+    let tabla = 'telas'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaTelas = data.datos
+        })
+  }
+
+  getDataBotones = () => {
+    let tabla = 'botones'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaBotones = data.datos
+        })
+  }
+
+  getDataHilos = () => {
+    let tabla = 'hilos'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaHilos = data.datos
+        })
+  }  
 
 }

@@ -5,11 +5,11 @@
 body
 {
     @include body;
-
 }
+
 .content {
 	position: relative;
-	top: 50%;
+    top: 50%;
     transform: translateY(-50%);
     h1{
         @include headers;
