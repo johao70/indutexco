@@ -20,30 +20,30 @@
             </tbody>
         </table>
     </div>
-    
+
     <div class="options">
         <strong>ETIQUETAS</strong><br>
         <select class="uno">
             <option value="999">Seleccione...</option>
-            <option name="idEtiqueta" value="{{item.id}}" *ngFor="let item of respuestaEtiquetas">{{item.nombre}}</option>
+            <option value="{{item.id}}" *ngFor="let item of respuestaEtiquetas">{{item.nombre}}</option>
         </select><br><br>
 
         <strong>BOTONES</strong><br>
         <select class="dos">
             <option value="999">Seleccione...</option>
-            <option [(ngModel)]="idBoton" name="idBoton" value="{{item.id}}" *ngFor="let item of respuestaBotones">{{item.nombre}}</option>
+            <option value="{{item.id}}" *ngFor="let item of respuestaBotones">{{item.nombre}}</option>
         </select><br><br>
 
         <strong>HILOS</strong><br>
         <select class="tres" >
             <option value="999">Seleccione...</option>
-            <option [(ngModel)]="idHilo" name="idHilo" value="{{item.id}" *ngFor="let item of respuestaHilos">{{item.nombre}}</option>
+            <option value="{{item.id}" *ngFor="let item of respuestaHilos">{{item.nombre}}</option>
         </select><br><br>
 
         <strong>TELAS</strong> <br>
         <select class="cuatro" >
             <option value="999">Seleccione...</option>
-            <option [(ngModel)]="idTela" name="idTela" value="{{item.id}" *ngFor="let item of respuestaTelas">{{item.nombre}}</option>
+            <option value="{{item.id}" *ngFor="let item of respuestaTelas">{{item.nombre}}</option>
         </select><br><br>
 
         <a type="button" (click)="postDataTable()">
@@ -54,4 +54,5 @@
             Enviar
         </a>
     </div>
+    
 </body>

@@ -97,7 +97,7 @@
     .sidebar 
     {
         position: absolute;
-        top: auto;
+        top: 5%;
         left: 0;
         bottom: 0;
         float: left;
@@ -223,13 +223,13 @@
         box-shadow: 2px 2px 2.7px 2.7px $color;
         padding: 20px;
         box-sizing: border-box;
-        border-radius: 2px; 
+        border-radius: 2px;
     }
     div
     {
         position: absolute;
-        top: 20%;
-        left: 13%;
+        top: 15%;
+        left: 10%;
     }
     select{
         padding: 10px;

@@ -1,12 +1,6 @@
 @import "../../scss/mixins";
 @import "../../scss/variables";
 
-
-body
-{
-    @include body;
-}
-
 .content {
 	position: relative;
     top: 50%;

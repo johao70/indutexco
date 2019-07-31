@@ -20,10 +20,10 @@ export class OrdentrabajoComponent implements OnInit {
   respuestaEtiquetas: any[]
   
   //POST
-  idTela: number
+  idEtiqueta: number
   idBoton: number
   idHilo: number
-  idEtiqueta: number
+  idTela: number
 
   constructor(private http: HttpClient) { }
 
@@ -56,8 +56,8 @@ export class OrdentrabajoComponent implements OnInit {
 
   postDataTable = () => {
     let tabla = 'productos'
-    let register = {datos: [{idTela: this.idTela, idBoton: this.idBoton, idHilo: this.idHilo, idEtiqueta: this.idEtiqueta}]}
-    this.http.post(environment.API_URL + `?tabla=${tabla}`, register)
+    let register = {tabla: tabla, datos: [{idTela: this.idTela, idBoton: this.idBoton, idHilo: this.idHilo, idEtiqueta: this.idEtiqueta}]}
+    this.http.post(environment.API_URL, register)
     .subscribe( data => {
       console.log(data)
     })
