@@ -2,7 +2,7 @@
 @import "../../../scss/mixins";
 
 @include tables(40%);
-@include options($claron);
+@include options($medium_blue);
 @include buttons($medium_blue, $silver);
 
 body
