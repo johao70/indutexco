@@ -22,25 +22,25 @@
     </div>
     
     <div class="options">
-        <label>Etiquetas</label><br>
+        <strong>ETIQUETAS</strong><br>
         <select class="uno">
             <option value="999">Seleccione...</option>
             <option value="{{item.id}}" *ngFor="let item of respuestaEtiquetas; let i = index">{{item.nombre}}</option>
         </select><br><br>
 
-        <label>Botones</label><br>
+        <strong>BOTONES</strong><br>
         <select class="dos">
             <option value="999">Seleccione...</option>
             <option value="{{item.id}}" *ngFor="let item of respuestaBotones; let i = index">{{item.nombre}}</option>
         </select><br><br>
 
-        <label>Hilos</label><br>
+        <strong>HILOS</strong><br>
         <select class="tres" >
             <option value="999">Seleccione...</option>
             <option value="{{item.id}" *ngFor="let item of respuestaHilos; let i = index">{{item.nombre}}</option>
         </select><br><br>
 
-        <label>Telas</label><br>
+        <strong>TELAS</strong> <br>
         <select class="cuatro" >
             <option value="999">Seleccione...</option>
             <option value="{{item.id}" *ngFor="let item of respuestaTelas; let i = index">{{item.nombre}}</option>
