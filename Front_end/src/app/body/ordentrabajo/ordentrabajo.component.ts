@@ -17,6 +17,7 @@ export class OrdentrabajoComponent implements OnInit {
   respuestaTelas: any[]
   respuestaBotones: any[]
   respuestaHilos: any[]
+  respuestaEtiquetas: any[]
   
 
   constructor(private http: HttpClient) { }
@@ -24,6 +25,9 @@ export class OrdentrabajoComponent implements OnInit {
   ngOnInit() {
     this.getDataTable()
     this.getDataTelas()
+    this.getDataBotones()
+    this.getDataHilos()
+    this.getDataEtiquetas()
     this.table_header = [
       {
         id: 'N°',
@@ -48,7 +52,8 @@ export class OrdentrabajoComponent implements OnInit {
   //OPTIONS
   getDataTelas = () => {
     let tabla = 'telas'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+    let campo = 'nombre'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}&campo=${campo}`)
         .subscribe(data => {
             this.respuestaTelas = data.datos
         })
@@ -56,7 +61,8 @@ export class OrdentrabajoComponent implements OnInit {
 
   getDataBotones = () => {
     let tabla = 'botones'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+    let campo = 'nombre'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}&campo=${campo}`)
         .subscribe(data => {
             this.respuestaBotones = data.datos
         })
@@ -64,10 +70,20 @@ export class OrdentrabajoComponent implements OnInit {
 
   getDataHilos = () => {
     let tabla = 'hilos'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+    let campo = 'nombre'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}&campo=${campo}`)
         .subscribe(data => {
             this.respuestaHilos = data.datos
         })
-  }  
+  }
+
+  getDataEtiquetas= () => {
+    let tabla = 'etiquetas'
+    let campo = 'nombre'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}&campo=${campo}`)
+        .subscribe(data => {
+            this.respuestaEtiquetas = data.datos
+        })
+  }
 
 }
