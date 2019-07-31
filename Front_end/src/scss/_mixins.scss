@@ -216,11 +216,17 @@
     }
 }
 
-@mixin options() 
+@mixin options($color) 
 {
+    .options
+    {
+        box-shadow: 2px 2px 2.7px 2.7px $color;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 2px; 
+    }
     div
     {
-        
         position: absolute;
         top: 20%;
         left: 13%;
@@ -233,6 +239,5 @@
     }
     strong{
         font-size: 16px;
-        
     }
 }

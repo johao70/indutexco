@@ -2,19 +2,11 @@
 @import "../../../scss/mixins";
 
 @include tables(40%);
-@include options;
+@include options($claron);
 @include buttons($medium_blue, $silver);
 
 body
 {
     margin: 0%;
     padding: 0%;
-}
-
-
-.options{
-    box-shadow: 2px 2px 2.7px 2.7px $claron;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 2px; 
 }
