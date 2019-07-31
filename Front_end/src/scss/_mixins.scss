@@ -223,13 +223,16 @@
         
         position: absolute;
         top: 20%;
-        left: 10%;
+        left: 13%;
     }
     select{
         padding: 10px;
         border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 12px;
     }
-    label{
+    strong{
         font-size: 16px;
+        
     }
 }
