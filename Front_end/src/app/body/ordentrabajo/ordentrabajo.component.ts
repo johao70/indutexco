@@ -61,6 +61,7 @@ export class OrdentrabajoComponent implements OnInit {
     .subscribe( data => {
       console.log(data)
     })
+    window.location.reload()
   }
 
   //OPTIONS

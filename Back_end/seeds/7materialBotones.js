@@ -1,10 +1,10 @@
 ;
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('materialBotones').del()
+  return knex('materialbotones').del()
     .then(function () {
       // Inserts seed entries
-      return knex('materialBotones').insert([
+      return knex('materialbotones').insert([
         {
           id: 1, 
           material: 'material1',

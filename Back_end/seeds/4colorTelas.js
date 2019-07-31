@@ -1,10 +1,10 @@
 ;
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('colorTelas').del()
+  return knex('colortelas').del()
     .then(function () {
       // Inserts seed entries
-      return knex('colorTelas').insert([
+      return knex('colortelas').insert([
         {
           id: 1, 
           nombre: 'rojo',

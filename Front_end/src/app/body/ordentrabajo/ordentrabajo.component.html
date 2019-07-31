@@ -12,10 +12,10 @@
             <tbody>
                 <tr *ngFor="let item of respuesta">
                     <td>{{ item.id }}</td>
-                    <td>{{ item.tela }}</td>
-                    <td>{{ item.boton }}</td>
-                    <td>{{ item.hilo }}</td>
-                    <td>{{ item.etiquetado }}</td>
+                    <td>{{ item.idtela }}</td>
+                    <td>{{ item.idboton }}</td>
+                    <td>{{ item.idhilo }}</td>
+                    <td>{{ item.idetiqueta}}</td>
                 </tr>
             </tbody>
         </table>
@@ -23,9 +23,9 @@
 
     <div class="options">
         <strong>ETIQUETAS</strong><br>
-        <select class="uno">
-            <option value="999">Seleccione...</option>
-            <option value="{{item.id}}" *ngFor="let item of respuestaEtiquetas">{{item.nombre}}</option>
+        <select class="uno" [(ngModel)]="idEtiquetas">
+            <!-- <option value="999">Seleccione...</option> -->
+            <option *ngFor="let item of respuestaEtiquetas" value="{{item.id}}" name="idEtiquetas">{{item.id}} - {{item.nombre}}</option>
         </select><br><br>
 
         <strong>BOTONES</strong><br>
