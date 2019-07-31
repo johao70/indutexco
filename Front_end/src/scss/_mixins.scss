@@ -220,8 +220,16 @@
 {
     div
     {
+        
         position: absolute;
-        top: 10%;
-        left: 5%;
+        top: 20%;
+        left: 10%;
+    }
+    select{
+        padding: 10px;
+        border-radius: 5px;
+    }
+    label{
+        font-size: 16px;
     }
 }
