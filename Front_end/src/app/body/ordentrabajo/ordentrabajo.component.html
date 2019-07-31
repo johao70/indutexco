@@ -1,5 +1,5 @@
 <body>
-    <div>
+    <div class="tablediv">
         <table class="table table-1">
             <thead *ngFor="let item of table_header">
                 <th>{{item.id}}</th>
@@ -22,28 +22,36 @@
     </div>
     
     <div class="options">
-        <label>Etiquetas</label>
+        <label>Etiquetas</label><br>
         <select class="uno">
             <option value="999">Seleccione...</option>
             <option value="{{item.id}}" *ngFor="let item of respuestaEtiquetas; let i = index">{{item.nombre}}</option>
-        </select>
+        </select><br><br>
 
-        <label>Botones</label>
+        <label>Botones</label><br>
         <select class="dos">
             <option value="999">Seleccione...</option>
             <option value="{{item.id}}" *ngFor="let item of respuestaBotones; let i = index">{{item.nombre}}</option>
-        </select>
+        </select><br><br>
 
-        <label>Hilos</label>
+        <label>Hilos</label><br>
         <select class="tres" >
             <option value="999">Seleccione...</option>
             <option value="{{item.id}" *ngFor="let item of respuestaHilos; let i = index">{{item.nombre}}</option>
-        </select>
+        </select><br><br>
 
-        <label>Telas</label>
+        <label>Telas</label><br>
         <select class="cuatro" >
             <option value="999">Seleccione...</option>
             <option value="{{item.id}" *ngFor="let item of respuestaTelas; let i = index">{{item.nombre}}</option>
-        </select>
+        </select><br><br>
+
+        <a>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Enviar
+        </a>
     </div>
 </body>

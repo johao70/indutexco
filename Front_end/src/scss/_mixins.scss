@@ -30,7 +30,7 @@
 
 @mixin tables($ancho) 
 {
-    div
+    .tablediv
     {
         position: absolute;
         top: 8%;
@@ -213,5 +213,15 @@
         bottom: 100%;
         transition: 1s;
         transition-delay: 0.75s;
+    }
+}
+
+@mixin options() 
+{
+    div
+    {
+        position: absolute;
+        top: 10%;
+        left: 5%;
     }
 }
