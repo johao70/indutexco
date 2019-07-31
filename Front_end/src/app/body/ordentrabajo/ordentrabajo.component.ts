@@ -19,6 +19,11 @@ export class OrdentrabajoComponent implements OnInit {
   respuestaHilos: any[]
   respuestaEtiquetas: any[]
   
+  //POST
+  idTela: number
+  idBoton: number
+  idHilo: number
+  idEtiqueta: number
 
   constructor(private http: HttpClient) { }
 
@@ -49,11 +54,19 @@ export class OrdentrabajoComponent implements OnInit {
         })
   }
 
+  postDataTable = () => {
+    let tabla = 'productos'
+    let register = {datos: [{idTela: this.idTela, idBoton: this.idBoton, idHilo: this.idHilo, idEtiqueta: this.idEtiqueta}]}
+    this.http.post(environment.API_URL + `?tabla=${tabla}`, register)
+    .subscribe( data => {
+      console.log(data)
+    })
+  }
+
   //OPTIONS
   getDataTelas = () => {
     let tabla = 'telas'
-    let campo = 'nombre'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}&campo=${campo}`)
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
             this.respuestaTelas = data.datos
         })
@@ -61,8 +74,7 @@ export class OrdentrabajoComponent implements OnInit {
 
   getDataBotones = () => {
     let tabla = 'botones'
-    let campo = 'nombre'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}&campo=${campo}`)
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
             this.respuestaBotones = data.datos
         })
@@ -70,8 +82,7 @@ export class OrdentrabajoComponent implements OnInit {
 
   getDataHilos = () => {
     let tabla = 'hilos'
-    let campo = 'nombre'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}&campo=${campo}`)
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
             this.respuestaHilos = data.datos
         })
@@ -79,8 +90,7 @@ export class OrdentrabajoComponent implements OnInit {
 
   getDataEtiquetas= () => {
     let tabla = 'etiquetas'
-    let campo = 'nombre'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}&campo=${campo}`)
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
             this.respuestaEtiquetas = data.datos
         })
