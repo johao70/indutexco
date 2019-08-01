@@ -23,25 +23,25 @@
 
     <div class="options">
         <strong>ETIQUETAS</strong><br>
-        <select class="uno" [(ngModel)]="idEtiquetas">
-            <!-- <option value="999">Seleccione...</option> -->
-            <option *ngFor="let item of respuestaEtiquetas" value="{{item.id}}" name="idEtiquetas">{{item.id}} - {{item.nombre}}</option>
+        <select class="uno" [(ngModel)]="default">
+            <option value="999">Seleccione...</option>
+            <option [(ngModel)]="idEtiquetas" name="idEtiquetas" *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.id}} - {{item.nombre}}</option>
         </select><br><br>
 
         <strong>BOTONES</strong><br>
-        <select class="dos">
+        <select class="dos" [(ngModel)]="default">
             <option value="999">Seleccione...</option>
-            <option value="{{item.id}}" *ngFor="let item of respuestaBotones">{{item.nombre}}</option>
+            <option *ngFor="let item of respuestaBotones" value="{{item.id}}">{{item.nombre}}</option>
         </select><br><br>
 
         <strong>HILOS</strong><br>
-        <select class="tres" >
+        <select class="tres" [(ngModel)]="default">
             <option value="999">Seleccione...</option>
             <option value="{{item.id}" *ngFor="let item of respuestaHilos">{{item.nombre}}</option>
         </select><br><br>
 
         <strong>TELAS</strong> <br>
-        <select class="cuatro" >
+        <select class="cuatro" [(ngModel)]="default">
             <option value="999">Seleccione...</option>
             <option value="{{item.id}" *ngFor="let item of respuestaTelas">{{item.nombre}}</option>
         </select><br><br>
@@ -54,5 +54,4 @@
             Enviar
         </a>
     </div>
-    
 </body>

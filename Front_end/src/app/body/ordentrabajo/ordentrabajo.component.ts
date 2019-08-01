@@ -13,12 +13,16 @@ export class OrdentrabajoComponent implements OnInit {
 
   table_header: any
   respuesta: any[]
+  postData: any
   //OPTIONS
   respuestaTelas: any[]
   respuestaBotones: any[]
   respuestaHilos: any[]
   respuestaEtiquetas: any[]
   
+  //
+  default: number
+
   //POST
   idEtiqueta: number
   idBoton: number
@@ -43,6 +47,7 @@ export class OrdentrabajoComponent implements OnInit {
         empleado: 'Empleado'
       }
     ]
+    this.default = 999
   }
 
   //TABLE
@@ -56,12 +61,13 @@ export class OrdentrabajoComponent implements OnInit {
 
   postDataTable = () => {
     let tabla = 'productos'
-    let register = {tabla: tabla, datos: [{idTela: this.idTela, idBoton: this.idBoton, idHilo: this.idHilo, idEtiqueta: this.idEtiqueta}]}
+    let register = {tabla: tabla, datos: [{"idtela": this.idTela, "idboton": this.idBoton, "idhilo": this.idHilo, "idetiqueta": this.idEtiqueta}]}
     this.http.post(environment.API_URL, register)
     .subscribe( data => {
+      this.postData = data
       console.log(data)
     })
-    window.location.reload()
+    // window.location.reload()
   }
 
   //OPTIONS
