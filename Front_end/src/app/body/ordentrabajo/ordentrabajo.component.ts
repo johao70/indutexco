@@ -65,8 +65,8 @@ export class OrdentrabajoComponent implements OnInit {
     this.http.post(environment.API_URL, register)
     .subscribe( data => {
       this.postData = data
-      console.log(data)
     })
+    console.log(this.idEtiqueta)
     // window.location.reload()
   }
 

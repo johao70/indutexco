@@ -23,9 +23,9 @@
 
     <div class="options">
         <strong>ETIQUETAS</strong><br>
-        <select class="uno" [(ngModel)]="default">
+        <select class="uno"  [(ngModel)]="idEtiqueta" name="idEtiqueta">
             <option value="999">Seleccione...</option>
-            <option [(ngModel)]="idEtiqueta" name="idEtiqueta" *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.id}} - {{item.nombre}}</option>
+            <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.id}} - {{item.nombre}}</option>
         </select><br><br>
 
         <strong>BOTONES</strong><br>
