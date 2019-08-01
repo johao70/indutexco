@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ordentrabajo',
@@ -24,6 +23,7 @@ export class OrdentrabajoComponent implements OnInit {
   default: number
 
   //POST
+  id: number
   idEtiqueta: number
   idBoton: number
   idHilo: number
@@ -52,8 +52,8 @@ export class OrdentrabajoComponent implements OnInit {
 
   //TABLE
   getDataTable = () => {
-    let tabla = 'productos'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+    let tabla = 'Productos'
+    this.http.get<any>(environment.API_URL + `${tabla}`)
         .subscribe(data => {
             this.respuesta = data.datos
         })
@@ -61,7 +61,7 @@ export class OrdentrabajoComponent implements OnInit {
 
   postDataTable = () => {
     let tabla = 'productos'
-    let register = {tabla: tabla, datos: [{idtela: this.idTela, idboton: this.idBoton, idhilo: this.idHilo, idetiqueta: this.idEtiqueta}]}
+    let register = {tabla: tabla, datos: [{id: this.id, idtela: this.idTela, idboton: this.idBoton, idhilo: this.idHilo, idetiqueta: this.idEtiqueta}]}
     this.http.post(environment.API_URL, register)
     .subscribe( data => {
       // this.postData = data

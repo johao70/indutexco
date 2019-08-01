@@ -81,14 +81,20 @@ let deleteDatos = (req, res) => {
     })
 }
 
-let getDatosNames = (req, res) => {
-    let tabla = req.query.tabla
-    db.select(('idetiqueta')).from(tabla)
-    // db.column('select ((idetiqueta)) from productos').select().from(tabla)
+let getDatosProductos = (req, res) => {
+    // db.select('productos.id', 'telas.nombre', 'hilos.nombre', 'etiquetas.nombre', 'botones.nombre').from('productos')
+        // .select(
+
+            // db.raw('select f_etiqueta(idetiqueta) as idetiqueta from productos')
+        db.raw('select id, (select f_telas(idtela)) as idtela, (select f_hilos(idhilo)) as idhilo, (select f_etiqueta(idetiqueta)) as idetiqueta, f_botones(idboton) as idboton from productos')
+        // .where('productos.idtela', '=', 'telas.id')
+        // .where('productos.idboton', '=', 'botones.id')
+        // .where('productos.idhilo', '=', 'hilos.id')
+        // .where('productos.idetiqueta', '=', 'etiquetas.id')
     .then( resultado => {
         return res.status(200).json({
             ok: true,
-            datos: resultado
+            datos: resultado.rows
         }) 
     })
     .catch((error) => {
@@ -105,5 +111,5 @@ module.exports = {
     postDatos,
     updateDatos,
     deleteDatos,
-    getDatosNames
+    getDatosProductos
 }
