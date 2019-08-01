@@ -31,19 +31,19 @@
         <strong>BOTONES</strong><br>
         <select class="dos" [(ngModel)]="idBoton" name="idBoton">
             <option value="999">Seleccione...</option>
-            <option *ngFor="let item of respuestaBotones" value="{{item.id}}">{{item.id}} - {{item.nombre}}</option>
+            <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.id}} - {{item.nombre}}</option>
         </select><br><br>
 
         <strong>HILOS</strong><br>
         <select class="tres" [(ngModel)]="idHilo" name="idHilo">
             <option value="999">Seleccione...</option>
-            <option *ngFor="let item of respuestaHilos" value="{{item.id}" >{{item.id}} - {{item.nombre}}</option>
+            <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.id}} - {{item.nombre}}</option>
         </select><br><br>
 
         <strong>TELAS</strong> <br>
         <select class="cuatro" [(ngModel)]="idTela" name="idTela">
             <option value="999">Seleccione...</option>
-            <option *ngFor="let item of respuestaTelas" value="{{item.id}" >{{item.id}} - {{item.nombre}}</option>
+            <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.id}} - {{item.nombre}}</option>
         </select><br><br>
 
         <a type="button" (click)="postDataTable()">

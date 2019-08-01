@@ -66,8 +66,7 @@ export class OrdentrabajoComponent implements OnInit {
     .subscribe( data => {
       this.postData = data
     })
-    console.log(this.idEtiqueta)
-    // window.location.reload()
+    window.location.reload()
   }
 
   //OPTIONS
