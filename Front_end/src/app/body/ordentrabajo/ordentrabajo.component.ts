@@ -64,7 +64,7 @@ export class OrdentrabajoComponent implements OnInit {
     let register = {tabla: tabla, datos: [{idtela: this.idTela, idboton: this.idBoton, idhilo: this.idHilo, idetiqueta: this.idEtiqueta}]}
     this.http.post(environment.API_URL, register)
     .subscribe( data => {
-      this.postData = data
+      // this.postData = data
     })
     window.location.reload()
   }

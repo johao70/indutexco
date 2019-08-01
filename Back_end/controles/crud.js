@@ -81,10 +81,10 @@ let deleteDatos = (req, res) => {
     })
 }
 
-let getDatosbyID = (req, res) => {
+let getDatosNames = (req, res) => {
     let tabla = req.query.tabla
-    let id = req.query.id
-    db.select().from(tabla).where('id', id)
+    db.select(('idetiqueta')).from(tabla)
+    // db.column('select ((idetiqueta)) from productos').select().from(tabla)
     .then( resultado => {
         return res.status(200).json({
             ok: true,
@@ -105,5 +105,5 @@ module.exports = {
     postDatos,
     updateDatos,
     deleteDatos,
-    getDatosbyID
+    getDatosNames
 }
