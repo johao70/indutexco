@@ -61,7 +61,7 @@ export class OrdentrabajoComponent implements OnInit {
 
   postDataTable = () => {
     let tabla = 'productos'
-    let register = {tabla: tabla, datos: [{"idtela": this.idTela, "idboton": this.idBoton, "idhilo": this.idHilo, "idetiqueta": this.idEtiqueta}]}
+    let register = {tabla: tabla, datos: [{idtela: this.idTela, idboton: this.idBoton, idhilo: this.idHilo, idetiqueta: this.idEtiqueta}]}
     this.http.post(environment.API_URL, register)
     .subscribe( data => {
       this.postData = data
