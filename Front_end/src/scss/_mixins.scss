@@ -28,7 +28,7 @@
 	@include center-horizontal;
 }
 
-@mixin tables($ancho) 
+@mixin tables($ancho, $color) 
 {
     .tablediv
     {
@@ -80,7 +80,7 @@
     }
     .table-1 
     {
-        background: $medium_blue;
+        background: $color;
     }
     .table-1 tr:hover 
     {

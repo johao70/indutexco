@@ -7,6 +7,7 @@
                 <th>{{item.boton}}</th>
                 <th>{{item.hilo}}</th>
                 <th>{{item.etiqueta}}</th>
+                <th></th>
             </thead>
 
             <tbody>
@@ -16,6 +17,15 @@
                     <td>{{ item.idboton }}</td>
                     <td>{{ item.idhilo }}</td>
                     <td>{{ item.idetiqueta}}</td>
+                    <td>
+                        <a type="button" class="tablebutton" (click)="deleteDataTable(item.id)">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <img src="../../../assets/delete-img.png" alt="delete-img" height="24" width="24">
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

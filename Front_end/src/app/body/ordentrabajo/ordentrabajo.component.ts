@@ -102,4 +102,11 @@ export class OrdentrabajoComponent implements OnInit {
         })
   }
 
+  deleteDataTable = (value) => {
+    let tabla = 'productos'
+    this.http.delete(environment.API_URL + `?tabla=${tabla}&&id=${value}`)
+    .subscribe( data => { })
+    window.location.reload()
+  }
+
 }

@@ -63,8 +63,8 @@ let updateDatos = (req, res) => {
 }
 
 let deleteDatos = (req, res) => {
-    let tabla = req.body.tabla
-    let id = req.body.id
+    let tabla = req.query.tabla
+    let id = req.query.id
     db(tabla).where('id', id).delete()
     .then(resultado => {
         return res.status(200).json({
