@@ -48,7 +48,7 @@ exports.up = function(knex, Promise) {
     table.string('color').notNullable().unique();
     table.string('descripcion');
   })
-  .createTable( 'cargo', function( table ) {
+  .createTable( 'cargos', function( table ) {
     table.increments('id');
     table.string('nombre');
   })
@@ -56,11 +56,27 @@ exports.up = function(knex, Promise) {
     table.increments('id');
     table.string('nombre');
   })
-  .createTable( 'estado', function( table ) {
+  .createTable( 'estados', function( table ) {
     table.increments('id');
     table.string('nombre');
     table.date('horario');
     table.timestamp('tiempo');
+  })
+  .createTable( 'clientes', function( table ) {
+    table.increments('id');
+    table.string('identificacion');
+    table.string('nombre');
+    table.string('apellido');
+    table.string('telefono');
+    table.string('direccion');
+  })
+  .createTable( 'tipo_prendas', function( table ) {
+    table.increments('id');
+    table.string('nombre');
+  })
+  .createTable( 'talla_prendas', function( table ) {
+    table.increments('id');
+    table.string('nombre');
   })
   //TABLAS FUERTES
   .createTable( 'telas', function( table ) {
@@ -97,16 +113,37 @@ exports.up = function(knex, Promise) {
     table.string('direccion');
     table.string('telefono');
     table.integer('iddepartamentos').references('id').inTable('departamentos');
-    table.integer('idcargo').references('id').inTable('cargo');
-    table.integer('idestado').references('id').inTable('estado');
+    table.integer('idcargo').references('id').inTable('cargos');
+    table.integer('idestado').references('id').inTable('estados');
   })
-  .createTable( 'productos', function( table ) {
+  .createTable( 'inventarios', function( table ) {
     table.increments('id');
     table.integer('idtela').references('id').inTable('telas');
     table.integer('idboton').references('id').inTable('botones');
     table.integer('idhilo').references('id').inTable('hilos');
     table.integer('idetiqueta').references('id').inTable('etiquetas');
     table.integer('idempleado').references('id').inTable('empleado');
+  })
+  .createTable( 'ordenes', function( table ) {
+    table.increments('id');
+    table.date('fecha_orden');
+    table.integer('idclientes').references('id').inTable('clientes');
+  })
+  .createTable( 'ordenes_detalle', function( table ) {
+    table.increments('id');
+    table.integer('idtela').references('id').inTable('telas');
+    table.integer('idboton').references('id').inTable('botones');
+    table.integer('idhilo').references('id').inTable('hilos');
+    table.integer('idetiqueta').references('id').inTable('etiquetas');
+
+    table.integer('idordenes').references('id').inTable('ordenes');
+    table.integer('idtipoprenda').references('id').inTable('tipo_prendas');
+    table.integer('idtallaprendas').references('id').inTable('talla_prendas');
+
+    table.integer('tela_cantidad');
+    table.integer('boton_cantidad');
+    table.integer('hilo_cantidad');
+    table.integer('etiqueta_cantidad');
   })
   };
 
@@ -121,12 +158,17 @@ exports.down = function(knex, Promise) {
         .dropTableIfExists( 'materialbotones' )
         .dropTableIfExists( 'formabotones' )
         .dropTableIfExists( 'colorbotones' )
-        .dropTableIfExists( 'cargo' )
+        .dropTableIfExists( 'cargos' )
         .dropTableIfExists( 'departamentos' )
-        .dropTableIfExists( 'estado' )
+        .dropTableIfExists( 'estados' )
         .dropTableIfExists( 'telas' )
         .dropTableIfExists( 'botones' )
         .dropTableIfExists( 'hilos' )
         .dropTableIfExists( 'empleado' )
-        .dropTableIfExists( 'productos' )
+        .dropTableIfExists( 'inventarios' )
+        .dropTableIfExists( 'clientes' )
+        .dropTableIfExists( 'tipo_prendas' )
+        .dropTableIfExists( 'talla_prendas' )
+        .dropTableIfExists( 'ordenes' )
+        .dropTableIfExists( 'ordenes_detalle' )
 };
