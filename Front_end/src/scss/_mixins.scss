@@ -90,18 +90,18 @@
 
 @mixin sidebar($color) 
 {
-    * 
-    {
-        box-sizing: border-box;
-    }
+    // * 
+    // {
+    //     box-sizing: border-box;
+    // }
     .sidebar 
     {
         border-right: 1px solid rgba(255, 255, 255, .4);
         background-image: url('../../assets/fondo1.jpg');
         position: absolute;
-        top: 5%;
+        top: 7.5%;
         left: 0;
-        bottom: 0;
+        // bottom: 100%;
         float: left;
         width: 250px;
         height: 100%;

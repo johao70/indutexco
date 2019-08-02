@@ -12,10 +12,105 @@
 
 #section-1{
     @include bg_covertint ($r_deep_blue,$g_deep_blue,$b_deep_blue,$r_light_blue,$g_light_blue,$b_light_blue,$alpha_cover,$picture-slide);
-    height: 100vh;
-    top: 50;
+    height: 60vh;
+    width: 203vh;
+    top: 20;
     color: $white;
     h1{
         margin-bottom: 30px;
     }
+}
+
+
+#informacion{
+    // @include bg_covertint ($r_deep_blue,$g_deep_blue,$b_deep_blue,$r_light_blue,$g_light_blue,$b_light_blue,$alpha_cover,$picture-slide);
+    background: rgba(5, 5, 5, 0.849);
+    width: 203vh;
+    height: 100vh;
+    bottom: 0;
+    top: 500px;
+    h1{
+        color:#fff;
+        left: 8%;
+        text-shadow: 1px 2px rgb(0, 0, 0);
+        position: absolute;
+        top: 80%;
+        text-transform: uppercase;
+
+
+    }
+    .mision{
+        border:   1px rgba(255, 255, 255, 0.993) solid;
+        width: 40%;
+        height: 70%;
+        position: absolute;
+        top: 95%;
+        left: 10%;
+
+        img{
+            width: 70%;
+            height: 50%;
+            top: 8%;
+            position: absolute;
+            left: 15%
+            
+        }
+        h2{
+            left: 10px;
+            left: 25%;
+            margin-top: 50%;
+            margin-bottom: 10px;
+            position: absolute;
+            color: rgb(252, 150, 16);
+        }
+        p{
+            position: absolute;
+            margin-top: 60%;
+            padding: 15px;
+            font-style: italic;
+            text-align: justify;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #fff;
+        }
+    }
+
+
+
+    .vision{
+        border:   1px rgba(255, 255, 255, 0.993) solid;
+        width: 40%;
+        height: 70%;
+        position: absolute;
+        top: 95%;
+        left: 55%;
+        bottom: 5%;
+        
+
+        img{
+            width: 70%;
+            height: 50%;
+            top: 8%;
+            position: absolute;
+            left: 15%
+            
+        }
+        h2{
+            left: 10px;
+            left: 25%;
+            margin-top: 50%;
+            margin-bottom: 10px;
+            position: absolute;
+            color: rgb(252, 150, 16);
+        }
+        p{
+            position: absolute;
+            margin-top: 60%;
+            padding: 15px;
+            font-style: italic;
+            text-align: justify;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #fff;
+        }
+    }
+    
 }
