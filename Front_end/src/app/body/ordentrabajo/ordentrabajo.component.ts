@@ -14,54 +14,47 @@ export class OrdentrabajoComponent implements OnInit {
   respuesta: any[]
   postData: any
   //OPTIONS
-  respuestaTelas: any[]
-  respuestaBotones: any[]
-  respuestaHilos: any[]
-  respuestaEtiquetas: any[]
-  
-  //
-  default: number
+  // respuestaTelas: any[]
+  // respuestaBotones: any[]
+  // respuestaHilos: any[]
+  // respuestaEtiquetas: any[]
+  respuestaClientes: any[]
 
   //POST
   id: number
-  idEtiqueta: number
-  idBoton: number
-  idHilo: number
-  idTela: number
+  nuevafecha = new Date()
+  fecha_orden = this.nuevafecha.getDate() + "/" + (this.nuevafecha.getMonth() +1) + "/" + this.nuevafecha.getFullYear()
+  idclientes: number
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getDataTable()
-    this.getDataTelas()
-    this.getDataBotones()
-    this.getDataHilos()
-    this.getDataEtiquetas()
+    // this.getDataTelas()
+    // this.getDataBotones()
+    // this.getDataHilos()
+    // this.getDataEtiquetas()
+    this.getDataClientes()
     this.table_header = [
       {
-        id: 'N°',
-        tela: 'Tela',
-        boton: 'Boton',
-        hilo: 'Hilo',
-        etiqueta: 'Etiqueta',
-        empleado: 'Empleado'
+        cliente: 'Cliente',
+        fecha_orden: 'Fecha Orden de Compra'
       }
     ]
-    this.default = 999
   }
 
   //TABLE
   getDataTable = () => {
-    let tabla = 'Productos'
-    this.http.get<any>(environment.API_URL + `${tabla}`)
+    let tabla = 'ordenes'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
             this.respuesta = data.datos
         })
   }
 
   postDataTable = () => {
-    let tabla = 'productos'
-    let register = {tabla: tabla, datos: [{id: this.id, idtela: this.idTela, idboton: this.idBoton, idhilo: this.idHilo, idetiqueta: this.idEtiqueta}]}
+    let tabla = 'ordenes'
+    let register = {tabla: tabla, datos: [{fecha_orden: this.fecha_orden, idclientes: this.idclientes}]}
     this.http.post(environment.API_URL, register)
     .subscribe( data => {
       // this.postData = data
@@ -70,40 +63,48 @@ export class OrdentrabajoComponent implements OnInit {
   }
 
   //OPTIONS
-  getDataTelas = () => {
-    let tabla = 'telas'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-        .subscribe(data => {
-            this.respuestaTelas = data.datos
-        })
-  }
+  // getDataTelas = () => {
+  //   let tabla = 'telas'
+  //   this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+  //       .subscribe(data => {
+  //           this.respuestaTelas = data.datos
+  //       })
+  // }
 
-  getDataBotones = () => {
-    let tabla = 'botones'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-        .subscribe(data => {
-            this.respuestaBotones = data.datos
-        })
-  }
+  // getDataBotones = () => {
+  //   let tabla = 'botones'
+  //   this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+  //       .subscribe(data => {
+  //           this.respuestaBotones = data.datos
+  //       })
+  // }
 
-  getDataHilos = () => {
-    let tabla = 'hilos'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-        .subscribe(data => {
-            this.respuestaHilos = data.datos
-        })
-  }
+  // getDataHilos = () => {
+  //   let tabla = 'hilos'
+  //   this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+  //       .subscribe(data => {
+  //           this.respuestaHilos = data.datos
+  //       })
+  // }
 
-  getDataEtiquetas= () => {
-    let tabla = 'etiquetas'
+  // getDataEtiquetas= () => {
+  //   let tabla = 'etiquetas'
+  //   this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+  //       .subscribe(data => {
+  //           this.respuestaEtiquetas = data.datos
+  //       })
+  // }
+
+  getDataClientes = () => {
+    let tabla = 'clientes'
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
-            this.respuestaEtiquetas = data.datos
+            this.respuestaClientes = data.datos
         })
   }
 
   deleteDataTable = (value) => {
-    let tabla = 'productos'
+    let tabla = 'ordenes'
     this.http.delete(environment.API_URL + `?tabla=${tabla}&&id=${value}`)
     .subscribe( data => { })
     window.location.reload()

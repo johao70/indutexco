@@ -2,21 +2,15 @@
     <div class="tablediv">
         <table class="table table-1">
             <thead *ngFor="let item of table_header">
-                <th>{{item.id}}</th>
-                <th>{{item.tela}}</th>
-                <th>{{item.boton}}</th>
-                <th>{{item.hilo}}</th>
-                <th>{{item.etiqueta}}</th>
-                <th></th>
+                <th>{{item.cliente}}</th>
+                <th>{{item.fecha_orden}}</th>
+                <th>Mas INFO</th>
             </thead>
 
             <tbody>
                 <tr *ngFor="let item of respuesta">
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.idtela }}</td>
-                    <td>{{ item.idboton }}</td>
-                    <td>{{ item.idhilo }}</td>
-                    <td>{{ item.idetiqueta}}</td>
+                    <td>{{ item.idclientes }}</td>
+                    <td>{{ item.fecha_orden }}</td>
                     <td>
                         <a type="button" class="tablebutton" (click)="deleteDataTable(item.id)">
                             <span></span>
@@ -32,12 +26,12 @@
     </div>
 
     <div class="options">
-        <strong>ETIQUETAS</strong><br>
-        <select [(ngModel)]="idEtiqueta" name="idEtiqueta">
-            <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.nombre}}</option>
-        </select><br><br>
+        <strong>CLIENTE</strong><br><br>
+        <select [(ngModel)]="idclientes" name="idclientes">
+            <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option>
+        </select><br><br><br><br>
 
-        <strong>BOTONES</strong><br>
+        <!-- <strong>BOTONES</strong><br>
         <select [(ngModel)]="idBoton" name="idBoton">
             <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
         </select><br><br>
@@ -50,7 +44,7 @@
         <strong>TELAS</strong> <br>
         <select [(ngModel)]="idTela" name="idTela">
             <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
-        </select><br><br>
+        </select><br><br> -->
 
         <a type="button" (click)="postDataTable()">
             <span></span>
