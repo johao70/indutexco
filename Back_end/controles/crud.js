@@ -82,7 +82,7 @@ let deleteDatos = (req, res) => {
 }
 
 let getDatosProductos = (req, res) => {
-    db.raw('select id, (select f_telas(idtela)) as idtela, (select f_hilos(idhilo)) as idhilo, (select f_etiqueta(idetiqueta)) as idetiqueta, f_botones(idboton) as idboton from productos order by id desc')
+    db.raw('select id, (select f_telas(idtela)) as idtela, (select f_hilos(idhilo)) as idhilo, (select f_etiqueta(idetiqueta)) as idetiqueta, f_botones(idboton) as idboton from ordenes_detalle order by id desc')
     .then( resultado => {
         return res.status(200).json({
             ok: true,
