@@ -12,7 +12,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
  
-  // searching the entire page for css variables
+
+//Busca en todas las paginas css las variables
 private themeWrapper = document.querySelector('body');
 onSubmit(form) {
     this.globalOverride(form.value);

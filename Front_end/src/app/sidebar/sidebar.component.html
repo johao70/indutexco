@@ -28,5 +28,11 @@
         <span></span>
         INVENTARIO
       </a> -->
+      <div class="colors">
+        <form  #gsForm="ngForm" (ngSubmit)="onSubmit(gsForm)">
+          <input #cardColor name="globalColor" type="color" ngModel>
+          <button type="submit">Aplicar</button>
+        </form> 
+      </div>
   </div>
 </body>

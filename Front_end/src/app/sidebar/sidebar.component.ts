@@ -12,4 +12,16 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     
   }
+
+  //Busca en todas las paginas css las variables
+private themeWrapper = document.querySelector('body');
+onSubmit(form) {
+    this.globalOverride(form.value);
+}
+globalOverride(stylesheet) {
+    if (stylesheet.globalColor) {
+        this.themeWrapper.style.setProperty('--bodBackground', stylesheet.globalColor);
+    }
+}
+
 }
