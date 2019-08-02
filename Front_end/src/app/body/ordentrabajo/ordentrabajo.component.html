@@ -2,6 +2,7 @@
     <div class="tablediv">
         <table class="table table-1">
             <thead *ngFor="let item of table_header">
+                <th>{{item.id}}</th>
                 <th>{{item.cliente}}</th>
                 <th>{{item.fecha_orden}}</th>
                 <th>Mas INFO</th>
@@ -9,6 +10,7 @@
 
             <tbody>
                 <tr *ngFor="let item of respuesta">
+                    <td>{{ item.id }}</td>
                     <td>{{ item.idclientes }}</td>
                     <td>{{ item.fecha_orden }}</td>
                     <td>

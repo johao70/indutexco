@@ -81,8 +81,25 @@ let deleteDatos = (req, res) => {
     })
 }
 
-let getDatosOrdenes = (req, res) => {
+let getDatosOrdenes_detalles = (req, res) => {
     db.raw('select id, (select f_telas(idtela)) as idtela, (select f_hilos(idhilo)) as idhilo, (select f_etiqueta(idetiqueta)) as idetiqueta, f_botones(idboton) as idboton from ordenes_detalle order by id desc')
+    .then( resultado => {
+        return res.status(200).json({
+            ok: true,
+            datos: resultado.rows
+        }) 
+    })
+    .catch((error) => {
+        return res.status(500).json({
+            ok: false,
+            datos: null,
+            mensaje: `Error del servidor: ${error}` 
+        })
+    })
+}
+
+let getDatosOrdenes = (req, res) => {
+    db.raw('select id, f_clientes(idclientes) as idclientes, fecha_orden from ordenes order by id desc')
     .then( resultado => {
         return res.status(200).json({
             ok: true,
@@ -103,5 +120,6 @@ module.exports = {
     postDatos,
     updateDatos,
     deleteDatos,
+    getDatosOrdenes_detalles,
     getDatosOrdenes
 }

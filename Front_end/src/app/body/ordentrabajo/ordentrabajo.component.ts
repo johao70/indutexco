@@ -37,6 +37,7 @@ export class OrdentrabajoComponent implements OnInit {
     this.getDataClientes()
     this.table_header = [
       {
+        id: 'N°',
         cliente: 'Cliente',
         fecha_orden: 'Fecha Orden de Compra'
       }
@@ -45,8 +46,8 @@ export class OrdentrabajoComponent implements OnInit {
 
   //TABLE
   getDataTable = () => {
-    let tabla = 'ordenes'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+    let tabla = 'F_ordenes'
+    this.http.get<any>(environment.API_URL + `${tabla}`)
         .subscribe(data => {
             this.respuesta = data.datos
         })
@@ -54,7 +55,7 @@ export class OrdentrabajoComponent implements OnInit {
 
   postDataTable = () => {
     let tabla = 'ordenes'
-    let register = {tabla: tabla, datos: [{fecha_orden: this.fecha_orden, idclientes: this.idclientes}]}
+    let register = {tabla: tabla, datos: [{id: this.id, fecha_orden: this.fecha_orden, idclientes: this.idclientes}]}
     this.http.post(environment.API_URL, register)
     .subscribe( data => {
       // this.postData = data

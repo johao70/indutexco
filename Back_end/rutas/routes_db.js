@@ -8,7 +8,8 @@ api.post('/route', control.postDatos)
 api.put('/route', control.updateDatos )
 api.delete('/route', control.deleteDatos)
 
-api.get('/routeOrdenes', control.getDatosOrdenes)
+api.get('/routeF_ordenesdetalle', control.getDatosOrdenes_detalles)
+api.get('/routeF_ordenes', control.getDatosOrdenes)
 
 
 module.exports = api
