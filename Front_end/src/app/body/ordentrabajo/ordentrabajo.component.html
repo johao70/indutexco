@@ -33,27 +33,23 @@
 
     <div class="options">
         <strong>ETIQUETAS</strong><br>
-        <select class="uno" [(ngModel)]="idEtiqueta" name="idEtiqueta">
-            <option value="999">Seleccione...</option>
-            <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.id}} - {{item.nombre}}</option>
+        <select [(ngModel)]="idEtiqueta" name="idEtiqueta">
+            <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.nombre}}</option>
         </select><br><br>
 
         <strong>BOTONES</strong><br>
-        <select class="dos" [(ngModel)]="idBoton" name="idBoton">
-            <option value="999">Seleccione...</option>
-            <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.id}} - {{item.nombre}}</option>
+        <select [(ngModel)]="idBoton" name="idBoton">
+            <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
         </select><br><br>
 
         <strong>HILOS</strong><br>
-        <select class="tres" [(ngModel)]="idHilo" name="idHilo">
-            <option value="999">Seleccione...</option>
-            <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.id}} - {{item.nombre}}</option>
+        <select [(ngModel)]="idHilo" name="idHilo">
+            <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.nombre}}</option>
         </select><br><br>
 
         <strong>TELAS</strong> <br>
-        <select class="cuatro" [(ngModel)]="idTela" name="idTela">
-            <option value="999">Seleccione...</option>
-            <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.id}} - {{item.nombre}}</option>
+        <select [(ngModel)]="idTela" name="idTela">
+            <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
         </select><br><br>
 
         <a type="button" (click)="postDataTable()">
