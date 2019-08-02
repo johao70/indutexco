@@ -97,7 +97,7 @@
     .sidebar 
     {
         border-right: 1px solid rgba(255, 255, 255, .4);
-        background-image: url('../../assets/sideBar-font.jpg');
+        background-image: url('../../assets/fondo1.jpg');
         position: absolute;
         top: 5%;
         left: 0;
@@ -153,7 +153,7 @@
         color: $text;
         background: $color1;
         box-shadow: 0 0 10px $color1, 0 0 40px $color1, 0 0 80px $color1;
-        transition-delay: 1s;
+        transition-delay: 2s;
     }
     a span
     {
@@ -203,7 +203,7 @@
     }
     a span:nth-child(4)
     {
-        bottom: -100%;
+        bottom: 0%;
         left: 0%;
         width: 2px;
         height: 100%;

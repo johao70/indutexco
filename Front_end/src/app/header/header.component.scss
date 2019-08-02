@@ -1,5 +1,6 @@
 @import "../../scss/mixins";
 @import "../../scss/variables";
+@import "../../scss/function";
 
 body
 {
@@ -14,7 +15,9 @@ body
 header
 {
 	overflow: hidden;
-	background: #252932;
+	background: var(--bodBackground);
+	color: var(--bodBackground);
+	// background: #252932;
 }
 
 .wrapper

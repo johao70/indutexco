@@ -53,4 +53,9 @@ $light: 100;
 $fuente: 'Century Gothic', sans-serif;
 
 
-$picture-slide:  "../../assets/shutterstock_719895307.jpg";
+$picture-slide:  "../../assets/fondo1.jpg";
+
+$variables: (
+    --bodBackground: var(--bodBackground),
+     );
+     

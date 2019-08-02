@@ -1,11 +1,19 @@
 <body>
     <header>
         <div class="wrapper">
-            <div class="logo">Indutexco</div>
-            <nav>
-                <!-- <a href="#">Iniciar Sesión</a> -->
-                <a routerLink="inicio">Inicio</a>
-            </nav>
+                <div class="logo">Indutexco</div>
+                <nav>
+                        <form  #gsForm="ngForm" (ngSubmit)="onSubmit(gsForm)">
+                               <a href="">Control de color</a>
+                                <a><input #cardColor name="globalColor" type="color" ngModel></a>
+                                
+                                <a><button type="submit">Submit</button></a>
+                                
+                    <!-- <a href="#">Iniciar Sesión</a> -->
+                    <a routerLink="inicio">Inicio</a>
+                </form>
+            
+                </nav>
         </div>
     </header>
 </body>
