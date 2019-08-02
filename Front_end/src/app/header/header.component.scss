@@ -5,8 +5,8 @@
 body
 {
 	position: absolute;
-	top: 0%;
-	right: 0%;
+	top: 0;
+	right: 0;
 	width: 100%;
 	margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ header
 {
 	overflow: hidden;
 	background: var(--bodBackground);
-	color: var(--bodBackground);
+	// color: var(--bodBackground);
 }
 
 .wrapper
@@ -29,12 +29,11 @@ header .logo
 {
 	color: $black;
 	font-size: 40px;
-    float: left;
+	float: left;
 }
 
 header nav
 {
-	// @include buttons($white, $black);
     float: right;
     margin: auto;
 }

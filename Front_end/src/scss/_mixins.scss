@@ -1,8 +1,3 @@
-@mixin body {
-    margin: 0;
-    padding: 0;
-}
-
 @mixin bg-covertint ($r-from, $g-from, $b-from, $r-to, $g-to, $b-to, $alpha, $imgurl, $background-top:"center", $background-left:"center", $background-attachment:"fixed") {
 	background: -webkit-linear-gradient(rgba($r-from, $g-from, $b-from, $alpha), rgba($r-to, $g-to, $b-to, $alpha)), url($imgurl) no-repeat unquote($background-top) unquote($background-left) unquote($background-attachment);
 	background:    -moz-linear-gradient(rgba($r-from, $g-from, $b-from, $alpha), rgba($r-to, $g-to, $b-to, $alpha)), url($imgurl) no-repeat unquote($background-top) unquote($background-left) unquote($background-attachment); 
@@ -90,20 +85,25 @@
 
 @mixin sidebar($color) 
 {
-    // * 
-    // {
-    //     box-sizing: border-box;
-    // }
+    * 
+    {
+        box-sizing: border-box;
+    }
+
+    body{
+        height: 100%;
+    }
     .sidebar 
     {
         border-right: 1px solid rgba(255, 255, 255, .4);
-        background-image: url('../../assets/fondo1.jpg');
-        position: absolute;
-        top: 6.5%;
-        left: 0;
-        // bottom: 100%;
+        // background-image: url('../../assets/fondo1.jpg');           //NO SE SI PONER IMAGEN :V
+        background: $silver_glass;
+        position: fixed;
         float: left;
-        width: 250px;
+        top: 0;
+        left: 0;
+        float: left;
+        width: 300px;
         height: 100%;
         padding: 30px;
         transform: translate(-100%);
@@ -233,10 +233,6 @@
         left: 10%;
     }
     select{
-        // padding: 10px;
-        // border-radius: 5px;
-        // margin-top: 10px;
-        // margin-bottom: 12px;
         border-radius: 15%;
         background: $light_blue;
         color: #fff;
