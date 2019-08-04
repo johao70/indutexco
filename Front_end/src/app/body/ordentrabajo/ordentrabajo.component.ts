@@ -158,4 +158,41 @@ export class OrdentrabajoComponent implements OnInit {
   }
 //POST MODAL CLIENTES -----------------------------------------------------------------------
 
+// POST MODAL DETALLE ORDEN --------------------------------------------------------------------------------
+  idDetalleOrden: number
+  idordenes: number = this.id       //PENDIENTE EN MODAL
+  idTipoPrenda: number
+  idTallaPrenda: number
+  idEtiqueta: number
+  idBoton: number
+  idHilo: number
+  idTela: number
+  etiquetaCantidad: number
+  botonCantidad: number
+  hiloCantidad: number
+  telaCantidad: number
+
+  postDataDetalleOrden = () => {
+    let tabla = 'ordenes_detalle'
+    let register = {tabla: tabla, datos: [{ id: this.idDetalleOrden, 
+                                            idordenes: this.idordenes, 
+                                            idtela: this.idTela,
+                                            idboton: this.idBoton,
+                                            idhilo: this.idHilo,
+                                            idetiqueta: this.idEtiqueta,
+                                            idtipoprenda: this.idTipoPrenda,
+                                            idtallaprendas: this.idTallaPrenda,
+                                            tela_cantidad: this.telaCantidad,
+                                            boton_cantidad: this.botonCantidad,
+                                            hilo_cantidad: this.hiloCantidad,
+                                            etiqueta_cantidad: this.etiquetaCantidad
+                                          }]}
+    this.http.post(environment.API_URL, register)
+    .subscribe( data => {
+      // this.postData = data
+    })
+    window.location.reload()
+  }
+
+// POST MODAL DETALLE ORDEN --------------------------------------------------------------------------------
 }

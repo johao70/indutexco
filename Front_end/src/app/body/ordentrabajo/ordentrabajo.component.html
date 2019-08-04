@@ -13,7 +13,7 @@
             <td>{{ item.id }}</td>
             <td>{{ item.idclientes }}</td>
             <td>{{ item.fecha_orden }}</td>
-            <td value={{item.id}}>
+            <td>
               <a type="button" onclick="document.getElementById('id05').style.display='block'">
                   <span></span>
                   <span></span>
@@ -124,14 +124,14 @@
               
         <div class="optione">
           <strong>TIPO DE PRENDA</strong><br>
-          <select [(ngModel)]="idBoton" name="idBoton">
+          <select [(ngModel)]="idTipoPrenda" name="idTipoPrenda">
             <option *ngFor="let item of respuestaTipoPrenda" value={{item.id}}>{{item.nombre}}</option>
           </select>
           <input type="number" name="cantidad" placeholder="Cantidad"><br>
           <br>
 
           <strong>TALLA DE LA PRENDA</strong><br>
-          <select [(ngModel)]="idBoton" name="idBoton">
+          <select [(ngModel)]="idTallaPrenda" name="idTallaPrenda">
             <option *ngFor="let item of respuestaTallaPrenda" value={{item.id}}>{{item.nombre}}</option>
           </select>
           <br><br>
