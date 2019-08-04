@@ -21,6 +21,8 @@ export class OrdentrabajoComponent implements OnInit {
     this.getDataHilos()
     this.getDataEtiquetas()
     this.getDataClientes()
+    this.getDataTipoPrenda()
+    this.getDataTallaPrenda()
     this.table_header = [
       {
         id: 'N°',
@@ -78,6 +80,8 @@ export class OrdentrabajoComponent implements OnInit {
   respuestaBotones: any[]
   respuestaHilos: any[]
   respuestaEtiquetas: any[]
+  respuestaTipoPrenda: any[]
+  respuestaTallaPrenda: any[]
   
   getDataTelas = () => {
     let tabla = 'telas'
@@ -108,6 +112,22 @@ export class OrdentrabajoComponent implements OnInit {
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
             this.respuestaEtiquetas = data.datos
+        })
+  }
+
+  getDataTipoPrenda= () => {
+    let tabla = 'tipo_prendas'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaTipoPrenda = data.datos
+        })
+  }
+
+  getDataTallaPrenda= () => {
+    let tabla = 'talla_prendas'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaTallaPrenda = data.datos
         })
   }
   // GET DATA TO MODAL DETALLE ORDEN --------------------------------------------------------------------------------
