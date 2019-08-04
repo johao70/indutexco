@@ -13,6 +13,7 @@ import { OrdentrabajoComponent } from './body/ordentrabajo/ordentrabajo.componen
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DetalleordenComponent } from './body/ordentrabajo/detalleorden/detalleorden.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     BodyComponent,
     PersonalComponent,
     InventarioComponent,
-    OrdentrabajoComponent
+    OrdentrabajoComponent,
+    DetalleordenComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,37 @@
+<body>
+    <div>
+        <table class="table table-1">
+            <thead *ngFor="let item of table_header">
+                <th>{{item.id}}</th>
+                <th>{{item.idOrdenes}}</th>
+                <th>{{item.idBoton}}</th>
+                <th>{{item.botonCantidad}}</th>
+                <th>{{item.idTela}}</th>
+                <th>{{item.telaCantidad}}</th>
+                <th>{{item.idHilo}}</th>
+                <th>{{item.hiloCantidad}}</th>
+                <th>{{item.idEtiqueta}}</th>
+                <th>{{item.etiquetaCantidad}}</th>
+                <th>{{item.idTipoPrenda}}</th>
+                <th>{{item.idTallaPrenda}}</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let item of respuesta">
+                    <td>{{item.id}}</td>
+                    <td>{{item.idOrdenes}}</td>
+                    <td>{{item.idBoton}}</td>
+                    <td>{{item.botonCantidad}}</td>
+                    <td>{{item.idTela}}</td>
+                    <td>{{item.telaCantidad}}</td>
+                    <td>{{item.idHilo}}</td>
+                    <td>{{item.hiloCantidad}}</td>
+                    <td>{{item.idEtiqueta}}</td>
+                    <td>{{item.etiquetaCantidad}}</td>
+                    <td>{{item.idTipoPrenda}}</td>
+                    <td>{{item.idTallaPrenda}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
