@@ -10,6 +10,7 @@ api.delete('/route', control.deleteDatos)
 
 api.get('/routeF_ordenesdetalle', control.getDatosOrdenes_detalles)
 api.get('/routeF_ordenes', control.getDatosOrdenes)
+api.get('/routebyid', control.getDatosbyID)
 
 
 module.exports = api

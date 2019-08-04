@@ -22,6 +22,26 @@ let getDatos = (req, res) => {
     })
 }
 
+let getDatosbyID = (req, res) => {
+    let tabla = req.query.tabla
+    let campo = req.query.campo
+    let id = req.query.id
+    db.select(campo).from(tabla).where('id', id)
+    .then( resultado => {
+        return res.status(200).json({
+            ok: true,
+            datos: resultado
+        }) 
+    })
+    .catch((error) => {
+        return res.status(500).json({
+            ok: false,
+            datos: null,
+            mensaje: `Error del servidor: ${error}` 
+        })
+    })
+}
+
 let postDatos = (req, res) => {
     let tabla = req.body.tabla
     let datos = req.body.datos
@@ -82,7 +102,8 @@ let deleteDatos = (req, res) => {
 }
 
 let getDatosOrdenes_detalles = (req, res) => {
-    db.raw('select id, (select f_telas(idtela)) as idtela, (select f_hilos(idhilo)) as idhilo, (select f_etiqueta(idetiqueta)) as idetiqueta, f_botones(idboton) as idboton from ordenes_detalle order by id desc')
+    let idordenes = req.query.idordenes
+    db.raw(`select id, (select f_telas(idtela)) as idtela, (select f_hilos(idhilo)) as idhilo, (select f_etiqueta(idetiqueta)) as idetiqueta, f_botones(idboton) as idboton, idordenes, idtipoprenda, idtallaprendas, tela_cantidad, boton_cantidad, hilo_cantidad, etiqueta_cantidad from ordenes_detalle where idordenes = ${idordenes} order by id desc`)
     .then( resultado => {
         return res.status(200).json({
             ok: true,
@@ -121,5 +142,6 @@ module.exports = {
     updateDatos,
     deleteDatos,
     getDatosOrdenes_detalles,
-    getDatosOrdenes
+    getDatosOrdenes,
+    getDatosbyID
 }

@@ -1,3 +1,5 @@
+<app-detalleorden [variable_ordenes]='123'></app-detalleorden>
+
 <body>
   <div class="tablediv">
     <table class="table table-1">
@@ -14,12 +16,12 @@
             <td>{{ item.idclientes }}</td>
             <td>{{ item.fecha_orden }}</td>
             <td>
-              <a type="button" onclick="document.getElementById('id05').style.display='block'">
+              <a type="button" onclick="document.getElementById('id05').style.display='block'" (click)="getDatabyID(item.id)">
                   <span></span>
                   <span></span>
                   <span></span>
                   <span></span>
-                  <img src="../../../assets/edit-img.png" alt="edit-img" height="18" width="18">
+                  <img src="../../../assets/edit-img.png" alt="edit-img" height="18" width="18" (click)="getDatabyID(item.id)">
                 </a>
                 <a type="button" routerLink="/detalle_orden">
                   <span></span>
@@ -44,8 +46,7 @@
   <div class="options">
     <strong>CLIENTE</strong><br><br>
     <select [(ngModel)]="idclientes" name="idclientes">
-        <!-- <option selected> Seleccionar cliente... </option> -->
-        <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option>
+      <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option>
     </select><br><br><br><br>
     <a type="button" class="cliente_modal_style" onclick="document.getElementById('id04').style.display='block'">
       <span></span>
@@ -130,7 +131,6 @@
           <select [(ngModel)]="idTipoPrenda" name="idTipoPrenda">
             <option *ngFor="let item of respuestaTipoPrenda" value={{item.id}}>{{item.nombre}}</option>
           </select>
-          <!-- <input type="number" name="cantidad" placeholder="Cantidad"><br> -->
           <br>
 
           <strong>TALLA DE LA PRENDA</strong><br>
@@ -148,7 +148,7 @@
   
           <strong>BOTONES</strong><br>
           <select [(ngModel)]="idBoton" name="idBoton">
-              <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
+            <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
           </select>
           <input type="number" [(ngModel)]="botonCantidad" name="botonCantidad" placeholder="Cantidad"><br>
           <br>

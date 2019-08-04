@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -9,17 +9,18 @@ import { environment } from 'src/environments/environment';
 })
 export class DetalleordenComponent implements OnInit {
 
+  @Input() variable_ordenes: number
+
   respuesta: any[]
   table_header: any
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.getData()
+    // this.getData()
     this.table_header = [
       {
-        id: 'N°',
-        idOrdenes: 'Cliente',
+        idOrdenes: 'N° Orden',
         idBoton: 'Tipo de Boton',
         botonCantidad: 'Cantidad - Boton',
         idTela: 'Tipo de Tela',
@@ -34,9 +35,16 @@ export class DetalleordenComponent implements OnInit {
     ]
   }
 
+  // getData = (value) => {
+  //   this.http.get<any>(environment.API_URL + `F_ordenesdetalle?idordenes=${value}`)
+  //       .subscribe(data => {
+  //           this.respuesta = data.datos
+  //       })
+  // }
+
   getData = () => {
     let tabla = 'ordenes_detalle'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+    this.http.get<any>(environment.API_URL + tabla)
         .subscribe(data => {
             this.respuesta = data.datos
         })

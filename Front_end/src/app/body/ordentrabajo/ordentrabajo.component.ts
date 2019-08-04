@@ -40,6 +40,8 @@ export class OrdentrabajoComponent implements OnInit {
   respuestaClientes: any[]
   respuesta: any[]
 
+  dataID: number
+
   getDataTable = () => {
     let tabla = 'F_ordenes'
     this.http.get<any>(environment.API_URL + `${tabla}`)
@@ -71,6 +73,14 @@ export class OrdentrabajoComponent implements OnInit {
     this.http.delete(environment.API_URL + `?tabla=${tabla}&&id=${value}`)
     .subscribe( data => { })
     window.location.reload()
+  }
+
+  getDatabyID = (value) => {
+    let tabla = 'ordenes'
+    this.http.get<any>(environment.API_URL + `byid?tabla=${tabla}&&id=${value}`)
+    .subscribe( data => { 
+      this.idOrdenes = data.datos[0].id
+    })
   }
   //PAGINA PRINCIPAL ORDEN DE TRABAJO -------------------------------------------------------------------------------
 
@@ -160,7 +170,7 @@ export class OrdentrabajoComponent implements OnInit {
 
 // POST MODAL DETALLE ORDEN --------------------------------------------------------------------------------
   idDetalleOrden: number
-  idordenes: number = this.id       //PENDIENTE EN MODAL
+  idOrdenes: number
   idTipoPrenda: number
   idTallaPrenda: number
   idEtiqueta: number
@@ -175,7 +185,7 @@ export class OrdentrabajoComponent implements OnInit {
   postDataDetalleOrden = () => {
     let tabla = 'ordenes_detalle'
     let register = {tabla: tabla, datos: [{ id: this.idDetalleOrden, 
-                                            idordenes: this.idordenes, 
+                                            idordenes: this.idOrdenes, 
                                             idtela: this.idTela,
                                             idboton: this.idBoton,
                                             idhilo: this.idHilo,
