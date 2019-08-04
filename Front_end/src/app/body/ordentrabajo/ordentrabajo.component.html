@@ -115,80 +115,58 @@
   <!-- ---------------------------------------INICIO Modal Detalle_Ordenes--------------------------------------------------------- -->
 
   <div class="w3-container">
-    
-    
-    
-              <div id="id05" class="w3-modal">
-                <div class="w3-modal-content w3-animate-top w3-card-4">
-                  <header class="w3-container w3-teal">
-                    <span onclick="document.getElementById('id05').style.display='none'"
-                      class="w3-button w3-display-topright">&times;</span>
-                    <h2>Registrar</h2>
-                  </header>
+    <div id="id05" class="w3-modal">
+      <div class="w3-modal-content">
+        <header>
+          <span onclick="document.getElementById('id05').style.display='none'"
+            class="w3-display-topright">&times;</span>
+          <h2>Registro Cliente</h2>
+        </header>
               
-    <!-- formulario -->
-    <!-- formulario -->
-    <!-- formulario -->
-     <div class="optione">
-
+        <div class="optione">
           <strong>TIPO DE PRENDA</strong><br>
           <select [(ngModel)]="idBoton" name="idBoton">
               <option *ngFor="let item of respuestaTipo_de_prenda" value={{item.id}}>{{item.nombre}}</option>
           </select>
-          <input type="number" name="cantidad" placeholder="Cantidad"><br><br>
+          <input type="number" name="cantidad" placeholder="Cantidad"><br>
           <br>
 
           <strong>TALLA DE LA PRENDA</strong><br>
           <select [(ngModel)]="idBoton" name="idBoton">
               <option *ngFor="let item of respuestaTalla" value={{item.id}}>{{item.nombre}}</option>
           </select>
-          <br>
-          <br>
-          <br>
-
+          <br><br>
 
           <strong>ETIQUETAS</strong><br>
           <select [(ngModel)]="idEtiqueta" name="idEtiqueta">
               <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.nombre}}</option>
-             
           </select>
-          <input type="number" name="cantidad" placeholder="Cantidad"><br><br>
+          <input type="number" name="cantidad" placeholder="Cantidad"><br>
           <br>
-
   
           <strong>BOTONES</strong><br>
           <select [(ngModel)]="idBoton" name="idBoton">
               <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
           </select>
-          <input type="number" name="cantidad" placeholder="Cantidad"><br><br>
-          <br><br>
+          <input type="number" name="cantidad" placeholder="Cantidad"><br>
+          <br>
   
           <strong>HILOS</strong><br>
           <select [(ngModel)]="idHilo" name="idHilo">
               <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.nombre}}</option>
           </select>
-          <input type="number" name="cantidad" placeholder="Cantidad"><br><br>
-          <br><br>
+          <input type="number" name="cantidad" placeholder="Cantidad"><br>
+          <br>
   
-          <strong>TELAS</strong> <br>
+          <strong>TELAS</strong><br>
           <select [(ngModel)]="idTela" name="idTela">
               <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
           </select>
-          <input type="number" name="edad" placeholder="Cantidad en Metros"><br><br>
-          <br><br>
-  
-
+          <input type="number" name="edad" placeholder="Cantidad en Metros"><br>
+          <br>
+        </div>
       </div>
-    <!-- formulario -->
-    <!-- formulario -->
-    <!-- formulario -->
-    <!-- formulario -->
-    
-                  <footer class="w3-container w3-teal">
-                    <p></p>
-                  </footer>
-                </div>
-              </div>
-            </div>
+    </div>
+  </div>
 
 </body>

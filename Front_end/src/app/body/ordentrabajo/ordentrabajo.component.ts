@@ -10,30 +10,16 @@ import { environment } from '../../../environments/environment';
 })
 export class OrdentrabajoComponent implements OnInit {
 
-  table_header: any
-  respuesta: any[]
-  postData: any
-  //OPTIONS
-  // respuestaTelas: any[]
-  // respuestaBotones: any[]
-  // respuestaHilos: any[]
-  // respuestaEtiquetas: any[]
-  respuestaClientes: any[]
-
-  //POST ORDEN
-  id: number
-  nuevafecha = new Date()
-  fecha_orden = this.nuevafecha.getDate() + "/" + (this.nuevafecha.getMonth() +1) + "/" + this.nuevafecha.getFullYear()
-  idclientes: number
+  table_header: any  
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getDataTable()
-    // this.getDataTelas()
-    // this.getDataBotones()
-    // this.getDataHilos()
-    // this.getDataEtiquetas()
+    this.getDataTelas()
+    this.getDataBotones()
+    this.getDataHilos()
+    this.getDataEtiquetas()
     this.getDataClientes()
     this.table_header = [
       {
@@ -44,7 +30,14 @@ export class OrdentrabajoComponent implements OnInit {
     ]
   }
 
-  //TABLE
+  //PAGINA PRINCIPAL ORDEN DE TRABAJO -------------------------------------------------------------------------------
+  id: number
+  nuevafecha = new Date()
+  fecha_orden = this.nuevafecha.getDate() + "/" + (this.nuevafecha.getMonth() +1) + "/" + this.nuevafecha.getFullYear()
+  idclientes: number
+  respuestaClientes: any[]
+  respuesta: any[]
+
   getDataTable = () => {
     let tabla = 'F_ordenes'
     this.http.get<any>(environment.API_URL + `${tabla}`)
@@ -63,39 +56,6 @@ export class OrdentrabajoComponent implements OnInit {
     window.location.reload()
   }
 
-  //OPTIONS
-  // getDataTelas = () => {
-  //   let tabla = 'telas'
-  //   this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-  //       .subscribe(data => {
-  //           this.respuestaTelas = data.datos
-  //       })
-  // }
-
-  // getDataBotones = () => {
-  //   let tabla = 'botones'
-  //   this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-  //       .subscribe(data => {
-  //           this.respuestaBotones = data.datos
-  //       })
-  // }
-
-  // getDataHilos = () => {
-  //   let tabla = 'hilos'
-  //   this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-  //       .subscribe(data => {
-  //           this.respuestaHilos = data.datos
-  //       })
-  // }
-
-  // getDataEtiquetas= () => {
-  //   let tabla = 'etiquetas'
-  //   this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-  //       .subscribe(data => {
-  //           this.respuestaEtiquetas = data.datos
-  //       })
-  // }
-
   getDataClientes = () => {
     let tabla = 'clientes'
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
@@ -110,8 +70,50 @@ export class OrdentrabajoComponent implements OnInit {
     .subscribe( data => { })
     window.location.reload()
   }
+  //PAGINA PRINCIPAL ORDEN DE TRABAJO -------------------------------------------------------------------------------
 
-  //POST CLIENTES
+
+  // GET DATA TO MODAL DETALLE ORDEN --------------------------------------------------------------------------------
+  respuestaTelas: any[]
+  respuestaBotones: any[]
+  respuestaHilos: any[]
+  respuestaEtiquetas: any[]
+  
+  getDataTelas = () => {
+    let tabla = 'telas'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaTelas = data.datos
+        })
+  }
+
+  getDataBotones = () => {
+    let tabla = 'botones'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaBotones = data.datos
+        })
+  }
+
+  getDataHilos = () => {
+    let tabla = 'hilos'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaHilos = data.datos
+        })
+  }
+
+  getDataEtiquetas= () => {
+    let tabla = 'etiquetas'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaEtiquetas = data.datos
+        })
+  }
+  // GET DATA TO MODAL DETALLE ORDEN --------------------------------------------------------------------------------
+
+
+  //POST MODAL CLIENTES -----------------------------------------------------------------------
   idClientes: number
   identificacion: string
   nombre: string
@@ -134,6 +136,6 @@ export class OrdentrabajoComponent implements OnInit {
     })
     window.location.reload()
   }
-
+//POST MODAL CLIENTES -----------------------------------------------------------------------
 
 }
