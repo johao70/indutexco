@@ -1,5 +1,3 @@
-<app-detalleorden [variable_ordenes]='123'></app-detalleorden>
-
 <body>
   <div class="tablediv">
     <table class="table table-1">
@@ -21,9 +19,9 @@
                   <span></span>
                   <span></span>
                   <span></span>
-                  <img src="../../../assets/edit-img.png" alt="edit-img" height="18" width="18" (click)="getDatabyID(item.id)">
+                  <img src="../../../assets/edit-img.png" alt="edit-img" height="18" width="18">
                 </a>
-                <a type="button" routerLink="/detalle_orden">
+                <a type="button" href="/detalle_orden" (click)="getDatabyID(item.id)">
                   <span></span>
                   <span></span>
                   <span></span>
@@ -131,6 +129,7 @@
           <select [(ngModel)]="idTipoPrenda" name="idTipoPrenda">
             <option *ngFor="let item of respuestaTipoPrenda" value={{item.id}}>{{item.nombre}}</option>
           </select>
+          <!-- <input type="number" [(ngModel)]="idOrdenes" name="idOrdenes" placeholder="idOrdenes" disabled><br> -->
           <br>
 
           <strong>TALLA DE LA PRENDA</strong><br>

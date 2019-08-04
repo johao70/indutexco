@@ -2,7 +2,6 @@
     <div>
         <table class="table table-1">
             <thead *ngFor="let item of table_header">
-                <th>{{item.idOrdenes}}</th>
                 <th>{{item.idBoton}}</th>
                 <th>{{item.botonCantidad}}</th>
                 <th>{{item.idTela}}</th>
@@ -17,7 +16,6 @@
 
             <tbody>
                 <tr *ngFor="let item of respuesta">
-                    <td>{{item.idordenes}}</td>
                     <td>{{item.idboton}}</td>
                     <td>{{item.boton_cantidad}}</td>
                     <td>{{item.idtela}}</td>
@@ -32,7 +30,4 @@
             </tbody>
         </table>
     </div>
-    <p>
-        value {{ variable_ordenes }}
-    </p>
 </body>
