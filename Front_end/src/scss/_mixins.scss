@@ -284,7 +284,7 @@
         padding:0;
         outline:0;
         width:1000px;
-        height: 450px;
+        height: 465px;
     }
     .w3-display-topright
     {
@@ -304,4 +304,125 @@
             bottom: -10;
         }  
     }
+}
+@mixin w3modal {
+    .w3-modal{
+        .w3-modal-content{
+            background-image: url("../../../assets/fontLogin.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            header{
+                h2{
+                    margin-left: 38%;
+                }
+            }
+            .optione{
+                position: absolute;
+                top: 3%;
+                left: 5%;
+                margin-left: 13%;
+                width: 600px;
+                box-shadow: 2px 2px 2.7px 2.7px ;
+                padding: 40px;
+                box-sizing: border-box;
+                border-radius: 2px;
+                
+                img{
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                margin-left: 50%;
+
+                }
+
+                .but{
+                    margin-top: 3%;
+                    margin-bottom: 0%;
+                    margin-left: 72%;
+                    box-sizing: border-box;
+                    position: relative;
+                        color: $silver;
+                        background: $blacks;
+                        box-shadow: 0 0 10px $gray, 0 0 40px $gray, 0 0 80px $gray;
+                        transition-delay: 2s;
+                    
+        
+                }
+        }
+
+        
+
+    }
+   
+}
+}
+
+@mixin wmodal {
+    
+.w-modal{
+    z-index:3;
+      display:none;
+      padding-top:0;
+      position:fixed;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      overflow:auto;
+      background-color:rgba(0, 0, 0, 0.75);
+  .w3-modal-content{
+      background-image: url("../../../assets/fontLogin.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 800px;
+      header{
+          h2{
+              margin-left: 38%;
+          }
+      }
+      .optione{
+          bottom: 10px;
+          position: absolute;
+          top: 10%;
+          left: 5%;
+          margin-left: 13%;
+          width: 650px;
+          box-shadow: 2px 2px 2.7px 2.7px ;
+          padding: 50px;
+          box-sizing: border-box;
+          border-radius: 2px;
+          
+         
+          input{
+            height: 7%;   
+              margin-top: 3%;
+              margin-bottom: 0%;
+              left: 15%;
+              box-sizing: border-box;
+              position: relative;
+                  color: $white;
+                  background: $white;
+                  box-shadow: 0 0 10px $white, 0 0 40px $white, 0 0 80px $white;
+                  transition-delay: 2s;
+
+              }
+
+          .but{
+              margin-top: 3%;
+              margin-bottom: 0%;
+              margin-left: 72%;
+              box-sizing: border-box;
+              position: relative;
+                  color: $silver;
+                  background: $blacks;
+                  box-shadow: 0 0 10px $gray, 0 0 40px $gray, 0 0 80px $gray;
+                  transition-delay: 2s;
+              
+  
+          }
+  }
+}
+}
 }

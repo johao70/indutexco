@@ -9,19 +9,24 @@
 body
 {
     margin: 0%;
-    padding: 0%;
+    padding: 55%;
+   @include w3modal;
+   @include wmodal;
+   
 }
 .cliente_modal_style
 {
     position: absolute;
     top: 0;
     right: 0;
+   
+    
 }
 
 // tbody{
 //     padding: 2%;
 //     margin: 10%;
-//     .options{
+//     .optione{
 //         position: absolute;
 //         top: 20%;
 //         left: 5%;
