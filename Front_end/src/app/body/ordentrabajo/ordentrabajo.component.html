@@ -13,7 +13,7 @@
             <td>{{ item.id }}</td>
             <td>{{ item.idclientes }}</td>
             <td>{{ item.fecha_orden }}</td>
-            <td value={{item.id}}>
+            <td>
               <a type="button" onclick="document.getElementById('id05').style.display='block'">
                   <span></span>
                   <span></span>
@@ -44,6 +44,7 @@
   <div class="options">
     <strong>CLIENTE</strong><br><br>
     <select [(ngModel)]="idclientes" name="idclientes">
+        <!-- <option selected> Seleccionar cliente... </option> -->
         <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option>
     </select><br><br><br><br>
     <a type="button" class="cliente_modal_style" onclick="document.getElementById('id04').style.display='block'">
@@ -79,7 +80,7 @@
             <img src="../../../assets/avatar-male.png">
 
           <strong>IDENTIFICACIÓN</strong><br>
-          <input type="number" [(ngModel)]="identificacion" name="identificacion" placeholder="Cédula o RUC">
+          <input type="number" [(ngModel)]="idClientes" name="idClientes" placeholder="Cédula o RUC">
           <br><br>
 
           <strong>NOMBRE</strong><br>
@@ -127,14 +128,14 @@
         <div class="optione">
           <strong>TIPO DE PRENDA</strong><br>
           <select [(ngModel)]="idBoton" name="idBoton">
-            <option *ngFor="let item of respuestaTipoPrenda" value={{item.id}}>{{item.nombre}}</option>
+              <option *ngFor="let item of respuestaTipo_de_prenda" value={{item.id}}>{{item.nombre}}</option>
           </select>
           <input type="number" name="cantidad" placeholder="Cantidad"><br>
           <br>
 
           <strong>TALLA DE LA PRENDA</strong><br>
           <select [(ngModel)]="idBoton" name="idBoton">
-            <option *ngFor="let item of respuestaTallaPrenda" value={{item.id}}>{{item.nombre}}</option>
+              <option *ngFor="let item of respuestaTalla" value={{item.id}}>{{item.nombre}}</option>
           </select>
           <br><br>
 
@@ -165,7 +166,7 @@
           </select>
           <input type="number" name="edad" placeholder="Cantidad en Metros"><br>
           <br>
-          <a type="button" (click)="postDataClientes()" class="but">
+           <a type="button" (click)="postDataClientes()" class="but">
               <span></span>
               <span></span>
               <span></span>
