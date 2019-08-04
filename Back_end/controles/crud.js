@@ -103,7 +103,7 @@ let deleteDatos = (req, res) => {
 
 let getDatosOrdenes_detalles = (req, res) => {
     let idordenes = req.query.idordenes
-    db.raw(`select id, (select f_telas(idtela)) as idtela, (select f_hilos(idhilo)) as idhilo, (select f_etiqueta(idetiqueta)) as idetiqueta, f_botones(idboton) as idboton, idordenes, idtipoprenda, idtallaprendas, tela_cantidad, boton_cantidad, hilo_cantidad, etiqueta_cantidad from ordenes_detalle where idordenes = ${idordenes} order by id desc`)
+    db.raw(`select id, (select f_telas(idtela)) as idtela, (select f_hilos(idhilo)) as idhilo, (select f_etiqueta(idetiqueta)) as idetiqueta, f_botones(idboton) as idboton, idordenes, (select f_tipoprenda(idtipoprenda)) as idtipoprenda, (select f_tallaprendas(idtallaprendas)) as idtallaprendas, tela_cantidad, boton_cantidad, hilo_cantidad, etiqueta_cantidad from ordenes_detalle where idordenes = ${idordenes} order by id desc`)
     .then( resultado => {
         return res.status(200).json({
             ok: true,
