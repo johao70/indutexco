@@ -1,279 +1,112 @@
 <body>
-    <div class="tablediv">
-        <table class="table table-1">
-            <thead *ngFor="let item of table_header">
-                <th>{{item.id}}</th>
-                <th>{{item.cliente}}</th>
-                <th>{{item.fecha_orden}}</th>
-                <th>Mas INFO</th>
-            </thead>
+  <div class="tablediv">
+    <table class="table table-1">
+      <thead *ngFor="let item of table_header">
+          <th>{{item.id}}</th>
+          <th>{{item.cliente}}</th>
+          <th>{{item.fecha_orden}}</th>
+          <th></th>
+      </thead>
 
-            <tbody>
-                <tr *ngFor="let item of respuesta">
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.idclientes }}</td>
-                    <td>{{ item.fecha_orden }}</td>
-                    <td>
-                        <a type="button" class="tablebutton">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-<!-- ---------------------------------------modal Editar o Detalle Orden--------------------------------------------------------- -->
-
-
-<!-- Formulaario de registro -->
-    <!-- Formulaario de registro -->
-    <!-- Formulaario de registro -->
-    <!-- Formulaario de registro -->
-    <div class="modal1">
-        <div class="conta-img">
-            <div class="information">
-              <button onclick="document.getElementById('id05').style.display='block'" > 
+      <tbody>
+          <tr *ngFor="let item of respuesta">
+            <td>{{ item.id }}</td>
+            <td>{{ item.idclientes }}</td>
+            <td>{{ item.fecha_orden }}</td>
+            <td>
+              <a type="button" class="tablebutton" >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <img src="../../../assets/edit-img.png" alt="edit-img" height="18" width="18">
+                </a>
                 <a type="button" class="tablebutton">
-                
-                <img src="../../../assets/edit-img.png" alt="details-img" height="20" width="20">
-            </a>
-    </button>
-      ￼
-              <p class="description"> .</p>
-              <!-- modal -->
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-              <div class="w3-container">
-      
-      
-      
-                <div id="id05" class="w3-modal">
-                  <div class="w3-modal-content w3-animate-top w3-card-4">
-                    <header class="w3-container w3-teal">
-                      <span onclick="document.getElementById('id05').style.display='none'"
-                        class="w3-button w3-display-topright">&times;</span>
-                      <h2>Registrar</h2>
-                    </header>
-                
-      <!-- formulario -->
-      <!-- formulario -->
-      <!-- formulario -->
-       <div class="optione">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <img src="../../../assets/details.ico" alt="details-img" height="18" width="18">
+                </a>
+                <a type="button" class="tablebutton" (click)="deleteDataTable(item.id)">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <img src="../../../assets/delete-img.png" alt="delete-img" height="18" width="18">
+                </a>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
 
-            <strong>TIPO DE PRENDA</strong><br>
-            <select [(ngModel)]="idBoton" name="idBoton">
-                <option *ngFor="let item of respuestaTipo_de_prenda" value={{item.id}}>{{item.nombre}}</option>
-            </select>
-            <input type="number" name="cantidad" placeholder="Cantidad"><br><br>
-            <br>
+  <div class="options">
+    <strong>CLIENTE</strong><br><br>
+    <select [(ngModel)]="idclientes" name="idclientes">
+        <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option>
+    </select><br><br><br><br>
+    <a type="button" class="cliente_modal_style" onclick="document.getElementById('id04').style.display='block'">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <img src="../../../assets/new-user-img.svg" alt="new-user-img" height="18" width="18">
+    </a>
 
-            <strong>TALLA DE LA PRENDA</strong><br>
-            <select [(ngModel)]="idBoton" name="idBoton">
-                <option *ngFor="let item of respuestaTalla" value={{item.id}}>{{item.nombre}}</option>
-            </select>
-            <br>
-            <br>
-            <br>
+    <a type="button" (click)="postDataTable()">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Generar Orden
+    </a>
+  </div>
 
 
-            <strong>ETIQUETAS</strong><br>
-            <select [(ngModel)]="idEtiqueta" name="idEtiqueta">
-                <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.nombre}}</option>
-               
-            </select>
-            <input type="number" name="cantidad" placeholder="Cantidad"><br><br>
-            <br>
+  <!-- ---------------------------------------Modal Cliente--------------------------------------------------------- -->
+    ￼
+  <!-- modal -->
+  <div>
+    <div id="id04" class="w3-modal">
+      <div class="w3-modal-content">
+        <header>
+          <span onclick="document.getElementById('id04').style.display='none'"
+            class="w3-display-topright">&times;</span>
+          <h2>Registro Cliente</h2>
+        </header>
 
-    
-            <strong>BOTONES</strong><br>
-            <select [(ngModel)]="idBoton" name="idBoton">
-                <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
-            </select>
-            <input type="number" name="cantidad" placeholder="Cantidad"><br><br>
-            <br><br>
-    
-            <strong>HILOS</strong><br>
-            <select [(ngModel)]="idHilo" name="idHilo">
-                <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.nombre}}</option>
-            </select>
-            <input type="number" name="cantidad" placeholder="Cantidad"><br><br>
-            <br><br>
-    
-            <strong>TELAS</strong> <br>
-            <select [(ngModel)]="idTela" name="idTela">
-                <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
-            </select>
-            <input type="number" name="edad" placeholder="Cantidad en Metros"><br><br>
-            <br><br>
-    
-            <a type="button"  class="enviar1" (click)="postDataTable()">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Enviar
-            </a>
+        <div class="optione">
+          <strong>IDENTIFICACIÓN</strong><br>
+          <input type="number" [(ngModel)]="idClientes" name="idClientes" placeholder="Cédula o RUC">
+          <br><br>
+
+          <strong>NOMBRE</strong><br>
+          <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="Nombre">
+          <br><br>
+  
+          <strong>APELLIDO</strong><br>
+          <input type="text" [(ngModel)]="apellido" name="apellido" placeholder="Apellido">
+          <br><br>
+  
+          <strong>TELEFONO</strong><br>
+          <input type="number" [(ngModel)]="telefono" name="telefono" placeholder="Telefono">
+          <br><br>
+  
+          <strong>DIRECCION</strong> <br>
+          <input type="text" [(ngModel)]="direccion" name="direccion" placeholder="Direccion">
+          <br><br>
+
+          <a type="button" (click)="postDataClientes()">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Guardar
+          </a>
         </div>
-      <!-- formulario -->
-      <!-- formulario -->
-      <!-- formulario -->
-      <!-- formulario -->
-      
-                    <footer class="w3-container w3-teal">
-                      <p></p>
-                    </footer>
-                  </div>
-                </div>
-              </div>
-              <!--boton modal-->
-          </div>
-        </div>
+      </div>
     </div>
-      <!-- Formulaario de registro -->
-      <!-- Formulaario de registro -->
-      <!-- Formulaario de registro -->
-    
-    <!-- ---------------------------------------modal Editar o Detalle Orden--------------------------------------------------------- -->
-    
-                            <img src="../../../assets/edit-img.png" alt="edit-img" height="24" width="24">
-                        </a>
-                        <a type="button" class="tablebutton">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <img src="../../../assets/details.ico" alt="details-img" height="24" width="24">
-                        </a>
-                        <a type="button" class="tablebutton" (click)="deleteDataTable(item.id)">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <img src="../../../assets/delete-img.png" alt="delete-img" height="24" width="24">
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-<tbody>
-    <div class="options">
-        <strong>CLIENTE</strong><br><br>
-        <select [(ngModel)]="idclientes" name="idclientes">
-            <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option>
-        </select><br><br><br><br>
+  </div>
 
-        <!-- <strong>BOTONES</strong><br>
-        <select [(ngModel)]="idBoton" name="idBoton">
-            <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
-        </select><br><br>
-
-        <strong>HILOS</strong><br>
-        <select [(ngModel)]="idHilo" name="idHilo">
-            <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.nombre}}</option>
-        </select><br><br>
-
-        <strong>TELAS</strong> <br>
-        <select [(ngModel)]="idTela" name="idTela">
-            <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
-        </select><br><br> -->
-                 
-<!-- ---------------------------------------Modal Cliente--------------------------------------------------------- -->
-
-
-<!-- Formulaario de registro -->
-    <!-- Formulaario de registro -->
-    <!-- Formulaario de registro -->
-    <!-- Formulaario de registro -->
-    <div class="modal2">
-        <div class="conta-img">
-            <div class="information">
-              <!-- <button onclick="document.getElementById('id04').style.display='block'" > Registrarce</button> -->
-              <button onclick="document.getElementById('id04').style.display='block'" class="w3-black w3-button "> Registrar Nuevo Cliente
-  ￼
-                <!-- <a type="button" class="tablebutton">
-                
-                <img src="../../../assets/edit-img.png" alt="details-img" height="20" width="20">
-            </a> -->
-    </button>
-      ￼
-              
-              <!-- modal -->
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-              <div class="w3-container">
-      
-      
-      
-                <div id="id04" class="w3-modal">
-                  <div class="w3-modal-content w3-animate-top w3-card-4">
-                    <header class="w3-container w3-teal">
-                      <span onclick="document.getElementById('id04').style.display='none'"
-                        class="w3-button w3-display-topright">&times;</span>
-                      <h2>Registrar Cliente Nuevo</h2>
-                    </header>
-                
-      <!-- formulario -->
-      <!-- formulario -->
-      <!-- formulario -->
-       <div class="optione">
-            <strong>CI O RUC</strong><br>
-            <input type="number" name="cedula" placeholder="CI o RUC">
-            <br><br>
-
-            <strong>NOMBRE</strong><br>
-            <input type="text" name="Nombre" placeholder="Nombre">
-            <br><br>
-    
-            <strong>APELLIDO</strong><br>
-            <input type="text" name="Apellido" placeholder="Apellido">
-            <br><br>
-    
-            <strong>TELEFONO</strong><br>
-            <input type="number" name="Telefono" placeholder="Telefono">
-            <br><br>
-    
-            <strong>DIRECCION</strong> <br>
-            <input type="text" name="Direccion" placeholder="Direccion">
-            <br><br>
-
-            <a type="button" (click)="postDataTable()">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Enviar
-            </a>
-    
-            
-        </div>
-      <!-- formulario -->
-      <!-- formulario -->
-      <!-- formulario -->
-      <!-- formulario -->
-      
-                    <footer class="w3-container w3-teal">
-                      <p></p>
-                    </footer>
-                  </div>
-                </div>
-              </div>
-              <!--boton modal-->
-          </div>
-        </div>
-    </div>
-      <!-- Formulaario de registro -->
-      <!-- Formulaario de registro -->
-      <!-- Formulaario de registro -->
-    
-    <!-- ---------------------------------------Modal Cliente--------------------------------------------------------- -->
-
-
-        <a type="button" (click)="postDataTable()">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Enviar
-        </a>
-    </div>
-</tbody>
 </body>

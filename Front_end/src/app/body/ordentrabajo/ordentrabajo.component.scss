@@ -2,91 +2,79 @@
 @import "../../../scss/mixins";
 
 @include tables(35%, $medium_blue);
-// @include options($medium_blue);
+@include options($medium_blue);
 @include buttons($medium_blue, $silver);
+@include modal;
 
 body
 {
     margin: 0%;
     padding: 0%;
-    .modal1{
-        margin-top: 15%;
-        padding: 3%;
-        margin-left: 83%;
-        @include buttons($medium_blue, $silver);
-        .tablebutton{
-            padding: 4%;
-            border: none;
-        }
-        .optione {
-            margin: 6%;
-            
-            a{
-                position: absolute;
-                box-sizing: border-box;
-                left: 70%;
-                top: 15%;
-            }
-            input{
-                position: absolute;
-                left: 25%;
-            }
-            
-            strong{
-                position: absolute;
-                left: 25%;
-            }
-                
-        }
+    // .modal1{
+    //     margin-top: 15%;
+    //     padding: 3%;
+    //     margin-left: 83%;
+    //     @include buttons($medium_blue, $silver);
+    //     .tablebutton{
+    //         padding: 4%;
+    //         border: none;
+    //     }
         
-    }
+    // }
 }
-tbody{
-    padding: 2%;
-    margin: 10%;
-    .options{
-        position: absolute;
-        top: 20%;
-        left: 5%;
-        box-shadow: 2px 2px 2.7px 2.7px ;
-        padding: 20px;
-        box-sizing: border-box;
-        border-radius: 2px;
+.cliente_modal_style
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+// tbody{
+//     padding: 2%;
+//     margin: 10%;
+//     .options{
+//         position: absolute;
+//         top: 20%;
+//         left: 5%;
+//         box-shadow: 2px 2px 2.7px 2.7px ;
+//         padding: 20px;
+//         box-sizing: border-box;
+//         border-radius: 2px;
         
-        select{
-            background: $light_blue;
-            color: #fff;
-            padding: 10px;
-            width: 250px;
-            height: 50px;
-            border: none;
-            font-size: 16px;
-            box-shadow: 0 5px 25px rgba(0,0,0,.5);
-            outline: none;
-            text-align: center;
-        }
-    }
-    .tablebutton{
-        padding: 3%;
-        border: none;
-        position: absolute;
-        margin-top: 20%;
-        margin-left: 7%;
+//         select{
+//             background: $light_blue;
+//             color: #fff;
+//             padding: 10px;
+//             width: 250px;
+//             height: 50px;
+//             border: none;
+//             font-size: 16px;
+//             box-shadow: 0 5px 25px rgba(0,0,0,.5);
+//             outline: none;
+//             text-align: center;
+//         }
+//     }
+//     .tablebutton{
+//         padding: 3%;
+//         border: none;
+//         position: absolute;
+//         margin-top: 20%;
+//         margin-left: 7%;
         
-    }
-    a{
-        margin-top: 0.5%;
-        margin-left: 15%;
-    }
-    input{
-        position: relative;
-        margin-left: 10%;
-        margin-top: 1%;
-    }
+//     }
+//     a{
+//         margin-top: 0.5%;
+//         margin-left: 15%;
+//     }
+//     input{
+//         position: relative;
+//         margin-left: 10%;
+//         margin-top: 1%;
+//     }
     
-    strong{
-        position: relative;
-        margin-left: 10%;
+//     strong{
+//         position: relative;
+//         margin-left: 10%;
         
-    }
-}
+//     }
+// }

@@ -20,7 +20,7 @@ export class OrdentrabajoComponent implements OnInit {
   // respuestaEtiquetas: any[]
   respuestaClientes: any[]
 
-  //POST
+  //POST ORDEN
   id: number
   nuevafecha = new Date()
   fecha_orden = this.nuevafecha.getDate() + "/" + (this.nuevafecha.getMonth() +1) + "/" + this.nuevafecha.getFullYear()
@@ -110,5 +110,30 @@ export class OrdentrabajoComponent implements OnInit {
     .subscribe( data => { })
     window.location.reload()
   }
+
+  //POST CLIENTES
+  idClientes: number
+  identificacion: string
+  nombre: string
+  apellido: string
+  telefono: string
+  direccion: string
+
+  postDataClientes = () => {
+    let tabla = 'clientes'
+    let register = {tabla: tabla, datos: [{ id: this.idClientes, 
+                                            identificacion: this.identificacion, 
+                                            nombre: this.nombre,
+                                            apellido: this.apellido, 
+                                            telefono: this.telefono, 
+                                            direccion: this.direccion
+                                          }]}
+    this.http.post(environment.API_URL, register)
+    .subscribe( data => {
+      // this.postData = data
+    })
+    window.location.reload()
+  }
+
 
 }
