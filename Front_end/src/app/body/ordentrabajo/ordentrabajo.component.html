@@ -44,6 +44,7 @@
   <div class="options">
     <strong>CLIENTE</strong><br><br>
     <select [(ngModel)]="idclientes" name="idclientes">
+        <!-- <option selected> Seleccionar cliente... </option> -->
         <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option>
     </select><br><br><br><br>
     <a type="button" class="cliente_modal_style" onclick="document.getElementById('id04').style.display='block'">
@@ -74,10 +75,12 @@
             class="w3-display-topright">&times;</span>
           <h2>Registro Cliente</h2>
         </header>
-
+        
         <div class="optione">
+            <img src="../../../assets/avatar-male.png">
+
           <strong>IDENTIFICACIÓN</strong><br>
-          <input type="number" [(ngModel)]="identificacion" name="identificacion" placeholder="Cédula o RUC">
+          <input type="number" [(ngModel)]="idClientes" name="idClientes" placeholder="Cédula o RUC">
           <br><br>
 
           <strong>NOMBRE</strong><br>
@@ -96,7 +99,7 @@
           <input type="text" [(ngModel)]="direccion" name="direccion" placeholder="Direccion">
           <br><br>
 
-          <a type="button" (click)="postDataClientes()">
+          <a type="button" (click)="postDataClientes()" class="but">
               <span></span>
               <span></span>
               <span></span>
@@ -114,12 +117,12 @@
   <!-- ---------------------------------------INICIO Modal Detalle_Ordenes--------------------------------------------------------- -->
 
   <div class="w3-container">
-    <div id="id05" class="w3-modal">
+    <div id="id05" class="w-modal">
       <div class="w3-modal-content">
         <header>
           <span onclick="document.getElementById('id05').style.display='none'"
             class="w3-display-topright">&times;</span>
-          <h2>Registro Cliente</h2>
+          <h2>Detalle Orden</h2>
         </header>
               
         <div class="optione">
@@ -163,6 +166,13 @@
           </select>
           <input type="number" name="edad" placeholder="Cantidad en Metros"><br>
           <br>
+           <a type="button" (click)="postDataClientes()" class="but">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Guardar
+          </a>
         </div>
       </div>
     </div>

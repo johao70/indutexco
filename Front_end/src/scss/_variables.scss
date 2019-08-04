@@ -35,6 +35,7 @@ $gray: rgb(177, 157, 157);
 $black: #000;
 $blue: rgb(0, 64, 255);
 $red: rgb(255, 0, 0);
+$blacks:rgba(0, 0, 0,0.7) ;
 
 $deep_blue: #001656;
 $r_deep_blue: 0;
@@ -59,4 +60,3 @@ $picture-slide:  "../../assets/fondo1.jpg";
 $variables: (
     --bodBackground: var(--bodBackground),
 );
-     
