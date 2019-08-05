@@ -39,6 +39,7 @@
         margin-bottom: 20px;
         border-collapse: collapse;
         font-family: 'Lato', Calibri, Arial, sans-serif;
+        font-size: 12px;
         border: none;
             border-radius: 3px;
             -webkit-border-radius: 3px;
@@ -53,11 +54,13 @@
     .table th 
     {
         font-weight: normal;
+        text-transform: uppercase;
         -webkit-font-smoothing: antialiased;
         padding: 1em;
         color: rgba(255, 251, 251, 0.986);
         text-shadow: 0 0 1px rgba(0,0,0,0.1);
         font-size: 1.5em;
+        background: rgb(4, 11, 110);
     }
     .table td 
     {
@@ -79,7 +82,7 @@
     }
     .table-1 tr:hover 
     {
-        background: rgba(0,0,0,0.19);
+        background: rgba(194, 224, 253, 0.836);
     }
 }
 
