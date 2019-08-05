@@ -176,21 +176,20 @@ export class OrdentrabajoComponent implements OnInit {
 
 
   //POST MODAL CLIENTES -----------------------------------------------------------------------
-  idClientes: number
-  identificacion: string
-  nombre: string
-  apellido: string
-  telefono: string
-  direccion: string
-
   postDataClientes = () => {
+    let identificacion = this.clienteForm.get('identificacion').value
+    let nombres = this.clienteForm.get('nombres').value
+    let apellidos = this.clienteForm.get('apellidos').value
+    let telefonos = this.clienteForm.get('telefonos').value
+    let direcciones = this.clienteForm.get('direcciones').value
+
     let tabla = 'clientes'
-    let register = {tabla: tabla, datos: [{ id: this.idClientes, 
-                                            identificacion: this.identificacion, 
-                                            nombre: this.nombre,
-                                            apellido: this.apellido, 
-                                            telefono: this.telefono, 
-                                            direccion: this.direccion
+    let register = {tabla: tabla, datos: [{ 
+                                            identificacion: identificacion, 
+                                            nombre: nombres,
+                                            apellido: apellidos, 
+                                            telefono: telefonos, 
+                                            direccion: direcciones
                                           }]}
     if(this.clienteForm.valid){
       this.http.post(environment.API_URL, register)
@@ -206,33 +205,33 @@ export class OrdentrabajoComponent implements OnInit {
 //POST MODAL CLIENTES ------------------------------------------------------------------------
 
 // POST MODAL DETALLE ORDEN --------------------------------------------------------------------------------
-  idDetalleOrden: number
   idOrdenes: number
-  idTipoPrenda: number
-  idTallaPrenda: number
-  idEtiqueta: number
-  idBoton: number
-  idHilo: number
-  idTela: number
-  etiquetaCantidad: number
-  botonCantidad: number
-  hiloCantidad: number
-  telaCantidad: number
 
   postDataDetalleOrden = () => {
+    let f_tipoPrenda = this.detalleOrdenForm.get('f_tipoPrenda').value
+    let f_tallaPrenda = this.detalleOrdenForm.get('f_tallaPrenda').value
+    let f_etiquetas = this.detalleOrdenForm.get('f_etiquetas').value
+    let f_cantidadEtiquetas = this.detalleOrdenForm.get('f_cantidadEtiquetas').value
+    let f_botones = this.detalleOrdenForm.get('f_botones').value
+    let f_cantidadBotones = this.detalleOrdenForm.get('f_cantidadBotones').value
+    let f_hilos = this.detalleOrdenForm.get('f_hilos').value
+    let f_cantidadHilos = this.detalleOrdenForm.get('f_cantidadHilos').value
+    let f_telas = this.detalleOrdenForm.get('f_telas').value
+    let f_cantidadTelas = this.detalleOrdenForm.get('f_cantidadTelas').value
+
     let tabla = 'ordenes_detalle'
-    let register = {tabla: tabla, datos: [{ id: this.idDetalleOrden, 
+    let register = {tabla: tabla, datos: [{ 
                                             idordenes: this.idOrdenes, 
-                                            idtela: this.idTela,
-                                            idboton: this.idBoton,
-                                            idhilo: this.idHilo,
-                                            idetiqueta: this.idEtiqueta,
-                                            idtipoprenda: this.idTipoPrenda,
-                                            idtallaprendas: this.idTallaPrenda,
-                                            tela_cantidad: this.telaCantidad,
-                                            boton_cantidad: this.botonCantidad,
-                                            hilo_cantidad: this.hiloCantidad,
-                                            etiqueta_cantidad: this.etiquetaCantidad
+                                            idtela: f_telas,
+                                            idboton: f_botones,
+                                            idhilo: f_hilos,
+                                            idetiqueta: f_etiquetas,
+                                            idtipoprenda: f_tipoPrenda,
+                                            idtallaprendas: f_tallaPrenda,
+                                            tela_cantidad: f_cantidadTelas,
+                                            boton_cantidad: f_cantidadBotones,
+                                            hilo_cantidad: f_cantidadHilos,
+                                            etiqueta_cantidad: f_cantidadEtiquetas
                                           }]}
     if(this.detalleOrdenForm.valid){
       this.http.post(environment.API_URL, register)

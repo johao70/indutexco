@@ -79,43 +79,43 @@
           <img src="../../../assets/avatar-male.png">
 
           <form [formGroup]="clienteForm" autocomplete="off">
-            <strong>IDENTIFICACIÓN</strong><br>
-            <input [(ngModel)]="identificacion" name="identificacion" formControlName="identificacion" placeholder="Cédula o RUC">
-            <span class="errors" *ngIf="clienteForm.controls['identificacion'].errors?.required"> Obligatorio </span>
-            <span class="errors" *ngIf="clienteForm.controls['identificacion'].errors?.pattern"> Inválido </span>
-            <br><br>
-
-            <strong>NOMBRE</strong><br>
-            <input [(ngModel)]="nombre" name="nombre" formControlName="nombres" placeholder="Nombre">
-            <span class="errors" *ngIf="clienteForm.controls['nombres'].errors?.required"> Obligatorio </span>
-            <span class="errors" *ngIf="clienteForm.controls['nombres'].errors?.pattern"> Inválido </span>
-            <br><br>
-    
-            <strong>APELLIDO</strong><br>
-            <input [(ngModel)]="apellido" name="apellido" formControlName="apellidos" placeholder="Apellido">
-            <span class="errors" *ngIf="clienteForm.controls['apellidos'].errors?.required"> Obligatorio </span>
-            <span class="errors" *ngIf="clienteForm.controls['apellidos'].errors?.pattern"> Inválido </span>
-            <br><br>
-    
-            <strong>TELÉFONO</strong><br>
-            <input [(ngModel)]="telefono" name="telefono" formControlName="telefonos" placeholder="Teléfono">
-            <span class="errors" *ngIf="clienteForm.controls['telefonos'].errors?.required"> Obligatorio </span>
-            <span class="errors" *ngIf="clienteForm.controls['telefonos'].errors?.pattern"> Inválido </span>
-            <br><br>
-    
-            <strong>DIRECCIÓN</strong><br>
-            <input [(ngModel)]="direccion" name="direccion" formControlName="direcciones" placeholder="Dirección">
-            <span class="errors" *ngIf="clienteForm.controls['direcciones'].errors?.required"> Obligatorio </span>
-            <br><br>
-
-            <a type="button" (click)="postDataClientes()" class="but">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              Guardar
-            </a>
-          </form>
+              <strong>IDENTIFICACIÓN</strong><br>
+              <input formControlName="identificacion" placeholder="Cédula o RUC">
+              <span class="errors" *ngIf="clienteForm.controls['identificacion'].errors?.required"> Obligatorio </span>
+              <span class="errors" *ngIf="clienteForm.controls['identificacion'].errors?.pattern"> Inválido </span>
+              <br><br>
+  
+              <strong>NOMBRE</strong><br>
+              <input formControlName="nombres" placeholder="Nombre">
+              <span class="errors" *ngIf="clienteForm.controls['nombres'].errors?.required"> Obligatorio </span>
+              <span class="errors" *ngIf="clienteForm.controls['nombres'].errors?.pattern"> Inválido </span>
+              <br><br>
+      
+              <strong>APELLIDO</strong><br>
+              <input formControlName="apellidos" placeholder="Apellido">
+              <span class="errors" *ngIf="clienteForm.controls['apellidos'].errors?.required"> Obligatorio </span>
+              <span class="errors" *ngIf="clienteForm.controls['apellidos'].errors?.pattern"> Inválido </span>
+              <br><br>
+      
+              <strong>TELÉFONO</strong><br>
+              <input formControlName="telefonos" placeholder="Teléfono">
+              <span class="errors" *ngIf="clienteForm.controls['telefonos'].errors?.required"> Obligatorio </span>
+              <span class="errors" *ngIf="clienteForm.controls['telefonos'].errors?.pattern"> Inválido </span>
+              <br><br>
+      
+              <strong>DIRECCIÓN</strong><br>
+              <input formControlName="direcciones" placeholder="Dirección">
+              <span class="errors" *ngIf="clienteForm.controls['direcciones'].errors?.required"> Obligatorio </span>
+              <br><br>
+  
+              <a type="button" (click)="postDataClientes()" class="but">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Guardar
+              </a>
+            </form>
         </div>
       </div>
     </div>
@@ -136,14 +136,15 @@
         </header>
               
         <div class="optione">
-          <form [formGroup]="detalleOrdenForm" autocomplete="off">
+
+          <!-- <form [formGroup]="detalleOrdenForm" autocomplete="off">
             <strong>TIPO DE PRENDA</strong><br>
             <select [(ngModel)]="idTipoPrenda" name="idTipoPrenda" formControlName="f_tipoPrenda">
               <option *ngFor="let item of respuestaTipoPrenda" value={{item.id}}>{{item.nombre}}</option>
             </select>
             <span class="errors" *ngIf="detalleOrdenForm.controls['f_tipoPrenda'].errors?.required"> Obligatorio </span>
             <br><br>
-            
+
             <strong>TALLA DE LA PRENDA</strong><br>
             <select [(ngModel)]="idTallaPrenda" name="idTallaPrenda" formControlName="f_tallaPrenda">
               <option *ngFor="let item of respuestaTallaPrenda" value={{item.id}}>{{item.nombre}}</option>
@@ -189,7 +190,62 @@
               <span></span>
               Guardar
             </a>
-          </form>
+          </form> -->
+          <form [formGroup]="detalleOrdenForm" autocomplete="off">
+              <strong>TIPO DE PRENDA</strong><br>
+              <select formControlName="f_tipoPrenda">
+                <option *ngFor="let item of respuestaTipoPrenda" value={{item.id}}>{{item.nombre}}</option>
+              </select>
+              <span class="errors" *ngIf="detalleOrdenForm.controls['f_tipoPrenda'].errors?.required"> Obligatorio </span>
+              <br><br>
+  
+              <strong>TALLA DE LA PRENDA</strong><br>
+              <select formControlName="f_tallaPrenda">
+                <option *ngFor="let item of respuestaTallaPrenda" value={{item.id}}>{{item.nombre}}</option>
+              </select>
+              <span class="errors" *ngIf="detalleOrdenForm.controls['f_tallaPrenda'].errors?.required"> Obligatorio </span>
+              <br><br>
+  
+              <strong>ETIQUETAS</strong><br>
+              <select formControlName="f_etiquetas">
+                  <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.nombre}}</option>
+              </select>
+              <span class="errors" *ngIf="detalleOrdenForm.controls['f_etiquetas'].errors?.required"> Obligatorio </span>
+              <input placeholder="Cantidad" formControlName="f_cantidadEtiquetas"><br>
+              <br>
+      
+              <strong>BOTONES</strong><br>
+              <select formControlName="f_botones">
+                <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
+              </select>
+              <span class="errors" *ngIf="detalleOrdenForm.controls['f_botones'].errors?.required"> Obligatorio </span>
+              <input placeholder="Cantidad" formControlName="f_cantidadBotones"><br>
+              <br>
+      
+              <strong>HILOS</strong><br>
+              <select formControlName="f_hilos">
+                <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.nombre}}</option>
+              </select>
+              <span class="errors" *ngIf="detalleOrdenForm.controls['f_hilos'].errors?.required"> Obligatorio </span>
+              <input placeholder="Cantidad" formControlName="f_cantidadHilos"><br>
+              <br>
+      
+              <strong>TELAS</strong><br>
+              <select formControlName="f_telas">
+                <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
+              </select>
+              <span class="errors" *ngIf="detalleOrdenForm.controls['f_telas'].errors?.required"> Obligatorio </span>
+              <input placeholder="Cantidad en Metros" formControlName="f_cantidadTelas"><br>
+              <br>
+              <a type="button" (click)="postDataDetalleOrden()" class="but">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Guardar
+              </a>
+            </form>
+
         </div>
       </div>
     </div>
