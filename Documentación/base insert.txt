@@ -49,7 +49,7 @@ insert into etiquetas(nombre, comentario) values('Textiles', 'Alta Densidad');
 insert into etiquetas(nombre, comentario) values('Impresas', 'Impacto visual');
 insert into etiquetas(nombre, comentario) values('Goma', 'Ideadas para que soporten el paso del tiempo');
 insert into etiquetas(nombre, comentario) values('Resina', 'Vistoso y llamativo');
-insert into etiquetas(nombre, comentario) values('Sinteticos', 'Piel reciclada o piel ecol�gica');
+insert into etiquetas(nombre, comentario) values('Sinteticos', 'Piel reciclada o piel ecológica');
 
 --FORMABOTONES
 insert into formabotones(descripcion) values('Cuadrado');
@@ -59,13 +59,13 @@ insert into formabotones(descripcion) values('Rectangulo');
 insert into formabotones(descripcion) values('Hexagonal');
 
 --MATERIALBOTONES
-insert into materialbotones(material, descripcion) values('Metal', 'Son plata, bronce, lat�n, peltre, zamac');
+insert into materialbotones(material, descripcion) values('Metal', 'Son plata, bronce, latón, peltre, zamac');
 insert into materialbotones(material, descripcion) values('Hueso', 'Utilizados son de vaca, buey y camello');
-insert into materialbotones(material, descripcion) values('Cerámica', 'Es de barro rojo, pasta blanca, gris, porcelana y refract�rio');
+insert into materialbotones(material, descripcion) values('Cerámica', 'Es de barro rojo, pasta blanca, gris, porcelana y refractório');
 insert into materialbotones(material, descripcion) values('Madera', 'Boj, haya y olivo');
 insert into materialbotones(material, descripcion) values('Resina', 'Muy utilizados');
 
--MATERIALTELAS
+--MATERIALTELAS
 insert into materialtelas(material, caracteristica) values('Lana', 'Fibra natural');
 insert into materialtelas(material, caracteristica) values('Seda', 'Material textil');
 insert into materialtelas(material, caracteristica) values('Lino', 'Lienzos');
@@ -89,11 +89,11 @@ insert into talla_prendas(nombre) values('XXL');
 insert into talla_prendas(nombre) values('3XL');
 
 --TELAS
-insert into telas(nombre, textura, idcolortelas, iddise�otela, idmaterialtela, idproveedor) values('Lupiul', 'Suave', 2, 3, 4, 3);
-insert into telas(nombre, textura, idcolortelas, iddise�otela, idmaterialtela, idproveedor) values('Batista', 'Fina', 4, 4, 2, 1);
-insert into telas(nombre, textura, idcolortelas, iddise�otela, idmaterialtela, idproveedor) values('Tweed', 'Lana', 3, 5, 2, 3);
-insert into telas(nombre, textura, idcolortelas, iddise�otela, idmaterialtela, idproveedor) values('Gabardina', 'Algodón', 1, 4, 2, 5);
-insert into telas(nombre, textura, idcolortelas, iddise�otela, idmaterialtela, idproveedor) values('Lino', 'Natural', 2, 4, 1, 1);
+insert into telas(nombre, textura, idcolortelas, iddiseñotela, idmaterialtela, idproveedor) values('Lupiul', 'Suave', 2, 3, 4, 3);
+insert into telas(nombre, textura, idcolortelas, iddiseñotela, idmaterialtela, idproveedor) values('Batista', 'Fina', 4, 4, 2, 1);
+insert into telas(nombre, textura, idcolortelas, iddiseñotela, idmaterialtela, idproveedor) values('Tweed', 'Lana', 3, 5, 2, 3);
+insert into telas(nombre, textura, idcolortelas, iddiseñotela, idmaterialtela, idproveedor) values('Gabardina', 'Algodón', 1, 4, 2, 5);
+insert into telas(nombre, textura, idcolortelas, iddiseñotela, idmaterialtela, idproveedor) values('Lino', 'Natural', 2, 4, 1, 1);
 
 --TIPO_PRENDAS
 insert into tipo_prendas(nombre) values('Jean');

@@ -28,7 +28,7 @@ exports.up = function(knex, Promise) {
   })
   .createTable( 'proveedores', function( table ) {
     table.increments('id');
-    table.string('ruc').notNullable().unique();
+    table.string('identificacion').notNullable().unique();
     table.string('nombre');
     table.string('apellido');
     table.string('telefono');
