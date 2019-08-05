@@ -1,0 +1,144 @@
+CREATE OR REPLACE FUNCTION public.f_botones(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from botones
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.f_botones(integer)
+    OWNER TO postgres;
+
+CREATE OR REPLACE FUNCTION public.f_clientes(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select (apellido || ' ' || nombre) into v_nombre
+	from clientes
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.f_clientes(integer)
+    OWNER TO postgres;
+
+CREATE OR REPLACE FUNCTION public.f_etiqueta(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from etiquetas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.f_etiqueta(integer)
+    OWNER TO postgres;
+
+CREATE OR REPLACE FUNCTION public.f_hilos(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from hilos
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.f_hilos(integer)
+    OWNER TO postgres;
+
+CREATE OR REPLACE FUNCTION public.f_tallaprendas(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$	DECLARE
+		v_nombre varchar;
+	BEGIN
+		select nombre into v_nombre
+		from talla_prendas
+		where id = id_param;
+		return v_nombre;
+	END
+$BODY$;
+
+ALTER FUNCTION public.f_tallaprendas(integer)
+    OWNER TO postgres;
+
+CREATE OR REPLACE FUNCTION public.f_telas(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.f_telas(integer)
+    OWNER TO postgres;
+
+CREATE OR REPLACE FUNCTION public.f_tipoprenda(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$	DECLARE
+		v_nombre varchar;
+	BEGIN
+		select nombre into v_nombre
+		from tipo_prendas
+		where id = id_param;
+		return v_nombre;
+	END
+$BODY$;
+
+ALTER FUNCTION public.f_tipoprenda(integer)
+    OWNER TO postgres;

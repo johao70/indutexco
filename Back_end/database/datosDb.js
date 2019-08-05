@@ -4,7 +4,7 @@ module.exports =  {
     connection: process.env.CONNECTION_DB || {  
                                                 host: '127.0.0.1', 
                                                 user: 'postgres', 
-                                                password: '12345', 
+                                                password: '1234', 
                                                 database: 'indutexco'
                                             }
 }

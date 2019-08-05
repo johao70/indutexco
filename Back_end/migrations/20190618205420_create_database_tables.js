@@ -135,11 +135,9 @@ exports.up = function(knex, Promise) {
     table.integer('idboton').references('id').inTable('botones');
     table.integer('idhilo').references('id').inTable('hilos');
     table.integer('idetiqueta').references('id').inTable('etiquetas');
-
     table.integer('idordenes').references('id').inTable('ordenes');
     table.integer('idtipoprenda').references('id').inTable('tipo_prendas');
     table.integer('idtallaprendas').references('id').inTable('talla_prendas');
-
     table.integer('tela_cantidad');
     table.integer('boton_cantidad');
     table.integer('hilo_cantidad');
