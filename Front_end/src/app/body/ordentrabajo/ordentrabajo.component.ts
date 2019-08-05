@@ -80,6 +80,7 @@ export class OrdentrabajoComponent implements OnInit {
     this.http.get<any>(environment.API_URL + `byid?tabla=${tabla}&&id=${value}`)
     .subscribe( data => { 
       this.idOrdenes = data.datos[0].id
+      localStorage.setItem("id", this.idOrdenes.toString() )
     })
   }
   //PAGINA PRINCIPAL ORDEN DE TRABAJO -------------------------------------------------------------------------------

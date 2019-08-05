@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -9,18 +9,15 @@ import { environment } from 'src/environments/environment';
 })
 export class DetalleordenComponent implements OnInit {
 
-  @Input() variable_ordenes: number
-
   respuesta: any[]
   table_header: any
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    // this.getData()
+    this.getData()
     this.table_header = [
       {
-        idOrdenes: 'N° Orden',
         idBoton: 'Tipo de Boton',
         botonCantidad: 'Cantidad - Boton',
         idTela: 'Tipo de Tela',
@@ -35,16 +32,14 @@ export class DetalleordenComponent implements OnInit {
     ]
   }
 
-  // getData = (value) => {
-  //   this.http.get<any>(environment.API_URL + `F_ordenesdetalle?idordenes=${value}`)
-  //       .subscribe(data => {
-  //           this.respuesta = data.datos
-  //       })
-  // }
+  getLocalStorage(){
+    let id = localStorage.getItem("id")
+    console.log(id)
+    return id
+  }
 
   getData = () => {
-    let tabla = 'ordenes_detalle'
-    this.http.get<any>(environment.API_URL + tabla)
+    this.http.get<any>(environment.API_URL + `F_ordenesdetalle?idordenes=${this.getLocalStorage()}`)
         .subscribe(data => {
             this.respuesta = data.datos
         })
