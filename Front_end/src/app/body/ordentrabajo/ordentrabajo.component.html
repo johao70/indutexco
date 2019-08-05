@@ -137,60 +137,6 @@
               
         <div class="optione">
 
-          <!-- <form [formGroup]="detalleOrdenForm" autocomplete="off">
-            <strong>TIPO DE PRENDA</strong><br>
-            <select [(ngModel)]="idTipoPrenda" name="idTipoPrenda" formControlName="f_tipoPrenda">
-              <option *ngFor="let item of respuestaTipoPrenda" value={{item.id}}>{{item.nombre}}</option>
-            </select>
-            <span class="errors" *ngIf="detalleOrdenForm.controls['f_tipoPrenda'].errors?.required"> Obligatorio </span>
-            <br><br>
-
-            <strong>TALLA DE LA PRENDA</strong><br>
-            <select [(ngModel)]="idTallaPrenda" name="idTallaPrenda" formControlName="f_tallaPrenda">
-              <option *ngFor="let item of respuestaTallaPrenda" value={{item.id}}>{{item.nombre}}</option>
-            </select>
-            <span class="errors" *ngIf="detalleOrdenForm.controls['f_tallaPrenda'].errors?.required"> Obligatorio </span>
-            <br><br>
-
-            <strong>ETIQUETAS</strong><br>
-            <select [(ngModel)]="idEtiqueta" name="idEtiqueta" formControlName="f_etiquetas">
-                <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.nombre}}</option>
-            </select>
-            <span class="errors" *ngIf="detalleOrdenForm.controls['f_etiquetas'].errors?.required"> Obligatorio </span>
-            <input type="number" [(ngModel)]="etiquetaCantidad" name="etiquetaCantidad" placeholder="Cantidad" formControlName="f_cantidadEtiquetas"><br>
-            <br>
-    
-            <strong>BOTONES</strong><br>
-            <select [(ngModel)]="idBoton" name="idBoton" formControlName="f_botones">
-              <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
-            </select>
-            <span class="errors" *ngIf="detalleOrdenForm.controls['f_botones'].errors?.required"> Obligatorio </span>
-            <input type="number" [(ngModel)]="botonCantidad" name="botonCantidad" placeholder="Cantidad" formControlName="f_cantidadBotones"><br>
-            <br>
-    
-            <strong>HILOS</strong><br>
-            <select [(ngModel)]="idHilo" name="idHilo" formControlName="f_hilos">
-              <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.nombre}}</option>
-            </select>
-            <span class="errors" *ngIf="detalleOrdenForm.controls['f_hilos'].errors?.required"> Obligatorio </span>
-            <input type="number" [(ngModel)]="hiloCantidad" name="hiloCantidad" placeholder="Cantidad" formControlName="f_cantidadHilos"><br>
-            <br>
-    
-            <strong>TELAS</strong><br>
-            <select [(ngModel)]="idTela" name="idTela" formControlName="f_telas">
-              <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
-            </select>
-            <span class="errors" *ngIf="detalleOrdenForm.controls['f_telas'].errors?.required"> Obligatorio </span>
-            <input type="number" [(ngModel)]="telaCantidad" name="telaCantidad" placeholder="Cantidad en Metros" formControlName="f_cantidadTelas"><br>
-            <br>
-            <a type="button" (click)="postDataDetalleOrden()" class="but">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              Guardar
-            </a>
-          </form> -->
           <form [formGroup]="detalleOrdenForm" autocomplete="off">
               <strong>TIPO DE PRENDA</strong><br>
               <select formControlName="f_tipoPrenda">
