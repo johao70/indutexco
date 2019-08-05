@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ordentrabajo',
@@ -10,9 +12,10 @@ import { environment } from '../../../environments/environment';
 })
 export class OrdentrabajoComponent implements OnInit {
 
-  table_header: any  
+  table_header: any
+  clienteForm: FormGroup;
 
-  constructor(private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
     this.getDataTable()
@@ -23,13 +26,24 @@ export class OrdentrabajoComponent implements OnInit {
     this.getDataClientes()
     this.getDataTipoPrenda()
     this.getDataTallaPrenda()
+    this.formularioCliente()
     this.table_header = [
       {
         id: 'N°',
         cliente: 'Cliente',
-        fecha_orden: 'Fecha Orden de Compra'
+        fecha_orden: 'Fecha Orden de Producción'
       }
     ]
+  }
+
+  formularioCliente(){
+    this.clienteForm = this.fb.group({
+      identificacion: [Validators.required, Validators.pattern('([0|1|2]{1})([0-9]{9})')],
+      nombres:  [Validators.required, Validators.pattern('[A-Za-z]{1}[a-z]{3,30}')],
+      apellidos:[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')],
+      telefonos:  [Validators.required, Validators.pattern('(((09)|(08)|(06)){1})([0-9]{8})')],
+      direcciones: [Validators.required]
+    })
   }
 
   //PAGINA PRINCIPAL ORDEN DE TRABAJO -------------------------------------------------------------------------------
@@ -63,9 +77,9 @@ export class OrdentrabajoComponent implements OnInit {
   getDataClientes = () => {
     let tabla = 'clientes'
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-        .subscribe(data => {
-            this.respuestaClientes = data.datos
-        })
+    .subscribe(data => {
+      this.respuestaClientes = data.datos
+    })
   }
 
   deleteDataTable = (value) => {
@@ -161,13 +175,18 @@ export class OrdentrabajoComponent implements OnInit {
                                             telefono: this.telefono, 
                                             direccion: this.direccion
                                           }]}
-    this.http.post(environment.API_URL, register)
-    .subscribe( data => {
-      // this.postData = data
-    })
-    window.location.reload()
+    if(this.clienteForm.valid){
+      this.http.post(environment.API_URL, register)
+      .subscribe( data => {
+        // this.postData = data
+      })
+      window.location.reload()
+    }else{
+      Swal.fire('Datos Invalidos')
+    }
+
   }
-//POST MODAL CLIENTES -----------------------------------------------------------------------
+//POST MODAL CLIENTES ------------------------------------------------------------------------
 
 // POST MODAL DETALLE ORDEN --------------------------------------------------------------------------------
   idDetalleOrden: number

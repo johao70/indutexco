@@ -76,35 +76,44 @@
         </header>
         
         <div class="optione">
-            <img src="../../../assets/avatar-male.png">
+          <img src="../../../assets/avatar-male.png">
 
-          <strong>IDENTIFICACIÓN</strong><br>
-          <input type="number" [(ngModel)]="idClientes" name="idClientes" placeholder="Cédula o RUC">
-          <br><br>
+          <form [formGroup]="clienteForm" autocomplete="off">
+            <strong>IDENTIFICACIÓN</strong><br>
+            <input [(ngModel)]="identificacion" name="identificacion" formControlName="identificacion" placeholder="Cédula o RUC"> 
+            <br><br>
+            <div class="errors">
+              <span *ngIf="clienteForm.controls['identificacion'].errors?.pattern"> Invalido </span>
+              <span *ngIf="clienteForm.controls['nombres'].errors?.pattern"> Invalido </span>
+              <span *ngIf="clienteForm.controls['apellidos'].errors?.pattern"> Invalido </span>
+              <span *ngIf="clienteForm.controls['telefonos'].errors?.pattern"> Invalido </span>
+              <span *ngIf="clienteForm.controls['direcciones'].errors?.required"> Obligatorio </span>
+            </div>
 
-          <strong>NOMBRE</strong><br>
-          <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="Nombre">
-          <br><br>
-  
-          <strong>APELLIDO</strong><br>
-          <input type="text" [(ngModel)]="apellido" name="apellido" placeholder="Apellido">
-          <br><br>
-  
-          <strong>TELEFONO</strong><br>
-          <input type="number" [(ngModel)]="telefono" name="telefono" placeholder="Telefono">
-          <br><br>
-  
-          <strong>DIRECCION</strong> <br>
-          <input type="text" [(ngModel)]="direccion" name="direccion" placeholder="Direccion">
-          <br><br>
+            <strong>NOMBRE</strong><br>
+            <input [(ngModel)]="nombre" name="nombre" formControlName="nombres" placeholder="Nombre">
+            <br><br>
+    
+            <strong>APELLIDO</strong><br>
+            <input [(ngModel)]="apellido" name="apellido" formControlName="apellidos" placeholder="Apellido">
+            <br><br>
+    
+            <strong>TELÉFONO</strong><br>
+            <input [(ngModel)]="telefono" name="telefono" formControlName="telefonos" placeholder="Teléfono">
+            <br><br>
+    
+            <strong>DIRECCIÓN</strong><br>
+            <input [(ngModel)]="direccion" name="direccion" formControlName="direcciones" placeholder="Dirección">
+            <br><br>
 
-          <a type="button" (click)="postDataClientes()" class="but">
+            <a type="button" (click)="postDataClientes()" class="but">
               <span></span>
               <span></span>
               <span></span>
               <span></span>
               Guardar
-          </a>
+            </a>
+          </form>
         </div>
       </div>
     </div>

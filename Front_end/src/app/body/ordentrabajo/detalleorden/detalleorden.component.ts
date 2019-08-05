@@ -34,7 +34,6 @@ export class DetalleordenComponent implements OnInit {
 
   getLocalStorage(){
     let id = localStorage.getItem("id")
-    console.log(id)
     return id
   }
 

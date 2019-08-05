@@ -12,7 +12,7 @@ import { InventarioComponent } from './body/inventario/inventario.component';
 import { OrdentrabajoComponent } from './body/ordentrabajo/ordentrabajo.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { DetalleordenComponent } from './body/ordentrabajo/detalleorden/detalleorden.component';
 
 @NgModule({
@@ -31,7 +31,8 @@ import { DetalleordenComponent } from './body/ordentrabajo/detalleorden/detalleo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
