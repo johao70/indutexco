@@ -13,7 +13,8 @@ import Swal from 'sweetalert2';
 export class OrdentrabajoComponent implements OnInit {
 
   table_header: any
-  clienteForm: FormGroup;
+  clienteForm: FormGroup
+  detalleOrdenForm: FormGroup
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
@@ -27,6 +28,7 @@ export class OrdentrabajoComponent implements OnInit {
     this.getDataTipoPrenda()
     this.getDataTallaPrenda()
     this.formularioCliente()
+    this.formularioDetalleOrden()
     this.table_header = [
       {
         id: 'N°',
@@ -38,11 +40,26 @@ export class OrdentrabajoComponent implements OnInit {
 
   formularioCliente(){
     this.clienteForm = this.fb.group({
-      identificacion: [Validators.required, Validators.pattern('([0|1|2]{1})([0-9]{9})')],
-      nombres:  [Validators.required, Validators.pattern('[A-Za-z]{1}[a-z]{3,30}')],
-      apellidos:[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')],
-      telefonos:  [Validators.required, Validators.pattern('(((09)|(08)|(06)){1})([0-9]{8})')],
-      direcciones: [Validators.required]
+      identificacion: ['',[Validators.required, Validators.pattern('([0|1|2]{1})([0-9]{9})')]],
+      nombres: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-z]{3,30}')]],
+      apellidos: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
+      telefonos: ['',[Validators.required, Validators.pattern('(((09)|(08)|(06)){1})([0-9]{8})')]],
+      direcciones: ['',[Validators.required]]
+    })
+  }
+
+  formularioDetalleOrden(){
+    this.detalleOrdenForm = this.fb.group({
+      f_tipoPrenda: ['',[Validators.required]],
+      f_tallaPrenda: ['',[Validators.required]],
+      f_etiquetas: ['',[Validators.required]],
+      f_botones: ['',[Validators.required]],
+      f_hilos: ['',[Validators.required]],
+      f_telas: ['',[Validators.required]],
+      f_cantidadEtiquetas: ['',[Validators.required]],
+      f_cantidadBotones: ['',[Validators.required]],
+      f_cantidadHilos: ['',[Validators.required]],
+      f_cantidadTelas: ['',[Validators.required]]
     })
   }
 
@@ -217,11 +234,16 @@ export class OrdentrabajoComponent implements OnInit {
                                             hilo_cantidad: this.hiloCantidad,
                                             etiqueta_cantidad: this.etiquetaCantidad
                                           }]}
-    this.http.post(environment.API_URL, register)
-    .subscribe( data => {
-      // this.postData = data
-    })
-    window.location.reload()
+    if(this.detalleOrdenForm.valid){
+      this.http.post(environment.API_URL, register)
+      .subscribe( data => {
+        // this.postData = data
+      })
+      window.location.reload()
+    }else{
+      Swal.fire('Datos Invalidos')
+    }
+
   }
 
 // POST MODAL DETALLE ORDEN --------------------------------------------------------------------------------
