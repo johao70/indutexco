@@ -2,7 +2,7 @@
 @import "../../../scss/mixins";
 
 @include tables(35%, $medium_blue);
-// @include tablastyle2;
+@include tablastyle2;
 @include options($medium_blue);
 @include buttons($medium_blue, $silver);
 @include modal;
@@ -10,7 +10,7 @@
 body
 {
     margin: 0%;
-    padding: 55%;
+    // padding: 55%;
     @include w3modal;
     @include wmodal;
 }
@@ -25,4 +25,10 @@ body
 {
     border: 2px solid red;
     color: red;
+}
+.pdf
+{
+    position: absolute;
+    bottom: 5%;
+    left: 80%;
 }

@@ -1,6 +1,6 @@
 <body>
   <div class="tablediv">
-    <table class="table table-1">
+    <table class="fl-table">
       <thead *ngFor="let item of table_header">
           <th>{{item.id}}</th>
           <th>{{item.cliente}}</th>
@@ -70,9 +70,8 @@
     <div id="id04" class="w3-modal">
       <div class="w3-modal-content">
         <header>
-          <span onclick="document.getElementById('id04').style.display='none'"
-            class="w3-display-topright">&times;</span>
-          <h2>Registro Cliente</h2>
+          <span onclick="document.getElementById('id04').style.display='none'" class="w3-display-topright">&times;</span>
+          <!-- <h2>Registro Cliente</h2> -->
         </header>
         
         <div class="optione">
@@ -130,9 +129,8 @@
     <div id="id05" class="w-modal">
       <div class="w3-modal-content">
         <header>
-          <span onclick="document.getElementById('id05').style.display='none'"
-            class="w3-display-topright">&times;</span>
-          <h2>Detalle Orden</h2>
+          <span onclick="document.getElementById('id05').style.display='none'" class="w3-display-topright">&times;</span>
+          <!-- <h2>Detalle Orden</h2> -->
         </header>
               
         <div class="optione">
@@ -204,5 +202,14 @@
       </div>
     </div>
   </div>
+
+  <a type="button" class="pdf" (click)="pdf()">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <img src="../../../assets/png-img.png" alt="pdf-img" height="32" width="32">
+    Guardar PDF
+  </a>
 
 </body>

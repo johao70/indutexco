@@ -136,6 +136,23 @@ let getDatosOrdenes = (req, res) => {
     })
 }
 
+let getPDFordenes = (req, res) => {
+    db.raw('select f_clientes(ordenes.idclientes), ordenes.fecha_orden, f_botones(ordenes_detalle.idboton), ordenes_detalle.boton_cantidad, f_telas(ordenes_detalle.idtela), ordenes_detalle.tela_cantidad, f_hilos(ordenes_detalle.idhilo), ordenes_detalle.hilo_cantidad, f_etiqueta(ordenes_detalle.idetiqueta), ordenes_detalle.etiqueta_cantidad, f_tipoprenda(tipo_prendas.id), f_tallaprendas(talla_prendas.id) from clientes join ordenes on clientes.id = ordenes.idclientes join ordenes_detalle on ordenes.id = ordenes_detalle.idordenes join tipo_prendas on tipo_prendas.id = ordenes_detalle.idtipoprenda join talla_prendas on talla_prendas.id =  ordenes_detalle.idtallaprendas')
+    .then( resultado => {
+        return res.status(200).json({
+            ok: true,
+            datos: resultado.rows
+        }) 
+    })
+    .catch((error) => {
+        return res.status(500).json({
+            ok: false,
+            datos: null,
+            mensaje: `Error del servidor: ${error}` 
+        })
+    })
+}
+
 module.exports = {
     getDatos,
     postDatos,
@@ -143,5 +160,6 @@ module.exports = {
     deleteDatos,
     getDatosOrdenes_detalles,
     getDatosOrdenes,
-    getDatosbyID
+    getDatosbyID,
+    getPDFordenes
 }

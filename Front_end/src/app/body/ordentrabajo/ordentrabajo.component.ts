@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import Swal from 'sweetalert2';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 @Component({
   selector: 'app-ordentrabajo',
@@ -29,6 +31,7 @@ export class OrdentrabajoComponent implements OnInit {
     this.getDataTallaPrenda()
     this.formularioCliente()
     this.formularioDetalleOrden()
+    this.getPDF()
     this.table_header = [
       {
         id: 'N°',
@@ -246,4 +249,61 @@ export class OrdentrabajoComponent implements OnInit {
   }
 
 // POST MODAL DETALLE ORDEN --------------------------------------------------------------------------------
+
+// JSPDF
+
+  docPdf: jsPDF;
+  pdfData: any[]
+
+  getPDF = () => {
+    let ruta = 'pdf'
+    this.http.get<any>(environment.API_URL + `${ruta}`)
+    .subscribe(data => {
+      this.pdfData = data.datos
+    })
+    console.log(this.pdfData)
+  }
+
+  pdf() {
+    let textSize=10;
+    let anchoTotal=210
+    let altoTotal=290
+    let margenSup=25
+    let margeninf=25
+    let margeniz=25
+    let margende= 25
+    let anchouso= anchoTotal-margeniz-margende
+    let altouso=altoTotal-margenSup-margeninf
+    let x=25;
+    let y=25;
+
+    let doc = new jsPDF({
+      orientation: 'landscape',
+      unit: 'mm',
+      format: 'A4',
+      compress: true,
+    })
+    var headers = 
+    {
+      f_clientes: "Cliente",
+      fecha_orden: "Fecha",
+      f_telas: "Tipo de tela",
+      f_botones: "Tipo de boton",
+      f_hilos: "Tipo de hilo",
+      f_etiqueta: "Tipo de etiqueta",
+      boton_cantidad: "Cantidad botones",
+      tela_cantidad: "Cantidad tela(metros)",
+      hilo_cantidad: "Cantidad hilo",
+      etiqueta_cantidad: "Cantidad etiquetas",
+      f_tipoprenda: "Tipo de prenda",
+      f_tallaprendas: "Talla de la prenda"
+    };
+    doc.autoTable({
+      head: [headers],
+      body: this.pdfData, colSpan: 2, rowSpan: 2, styles: {halign: 'center'},
+    })
+    doc.save('OrdenesProduccion.pdf')
+  }
+
+// JSPDF
 }
