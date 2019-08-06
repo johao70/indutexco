@@ -2,6 +2,7 @@
 @import "../../../scss/mixins";
 
 @include tables(35%, $medium_blue);
+// @include tablastyle2;
 @include options($medium_blue);
 @include buttons($medium_blue, $silver);
 @include modal;
@@ -10,25 +11,18 @@ body
 {
     margin: 0%;
     padding: 55%;
-   @include w3modal;
-   @include wmodal;
-   
+    @include w3modal;
+    @include wmodal;
 }
 .cliente_modal_style
 {
     position: absolute;
     top: 0;
-    right: 0;
-   
-    
+    right: 0; 
 }
 
 .errors
 {
-    // position: absolute;
-    // background: red;
     border: 2px solid red;
     color: red;
-    // top: 38%;
-    // left: 60%;
 }

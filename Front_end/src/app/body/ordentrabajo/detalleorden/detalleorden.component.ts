@@ -44,4 +44,10 @@ export class DetalleordenComponent implements OnInit {
         })
   }
 
+  deleteDataTable = (value) => {
+    let tabla = 'ordenes_detalle'
+    this.http.delete(environment.API_URL + `?tabla=${tabla}&&id=${value}`)
+    .subscribe( data => { })
+  }
+
 }

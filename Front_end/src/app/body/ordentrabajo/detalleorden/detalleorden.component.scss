@@ -1,7 +1,8 @@
 @import "../../../../scss/variables";
 @import "../../../../scss/mixins";
 
-@include tables(5%, $medium_blue);
+// @include tables(5%, $medium_blue);
+@include tablastyle2;
 
 body
 {
