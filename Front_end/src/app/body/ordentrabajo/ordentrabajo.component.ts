@@ -56,10 +56,10 @@ export class OrdentrabajoComponent implements OnInit {
       f_botones: ['',[Validators.required]],
       f_hilos: ['',[Validators.required]],
       f_telas: ['',[Validators.required]],
-      f_cantidadEtiquetas: ['',[Validators.required]],
-      f_cantidadBotones: ['',[Validators.required]],
-      f_cantidadHilos: ['',[Validators.required]],
-      f_cantidadTelas: ['',[Validators.required]]
+      f_cantidadEtiquetas: ['',[Validators.required, Validators.pattern('[0-9]{1,3}')]],
+      f_cantidadBotones: ['',[Validators.required, Validators.pattern('[0-9]{1,3}')]],
+      f_cantidadHilos: ['',[Validators.required, Validators.pattern('[0-9]{1,3}')]],
+      f_cantidadTelas: ['',[Validators.required, Validators.pattern('[0-9]{1,3}')]]
     })
   }
 

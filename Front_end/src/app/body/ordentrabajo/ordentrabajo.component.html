@@ -154,10 +154,12 @@
   
               <strong>ETIQUETAS</strong><br>
               <select formControlName="f_etiquetas">
-                  <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.nombre}}</option>
+                <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.nombre}}</option>
               </select>
               <span class="errors" *ngIf="detalleOrdenForm.controls['f_etiquetas'].errors?.required"> Obligatorio </span>
-              <input placeholder="Cantidad" formControlName="f_cantidadEtiquetas"><br>
+              <input placeholder="Cantidad" formControlName="f_cantidadEtiquetas">
+              <br>
+              <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadEtiquetas'].errors?.pattern"> Cantidad inválida </span>
               <br>
       
               <strong>BOTONES</strong><br>
@@ -165,15 +167,19 @@
                 <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
               </select>
               <span class="errors" *ngIf="detalleOrdenForm.controls['f_botones'].errors?.required"> Obligatorio </span>
-              <input placeholder="Cantidad" formControlName="f_cantidadBotones"><br>
+              <input placeholder="Cantidad" formControlName="f_cantidadBotones">
+              <br>
+              <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadBotones'].errors?.pattern"> Cantidad inválida </span>
               <br>
       
               <strong>HILOS</strong><br>
               <select formControlName="f_hilos">
                 <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.nombre}}</option>
               </select>
-              <span class="errors" *ngIf="detalleOrdenForm.controls['f_hilos'].errors?.required"> Obligatorio </span>
-              <input placeholder="Cantidad" formControlName="f_cantidadHilos"><br>
+              <span class="errors" *ngIf="detalleOrdenForm.controls['f_hilos'].errors?.required"> Obligatorio</span>
+              <input placeholder="Cantidad" formControlName="f_cantidadHilos">
+              <br>
+              <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadHilos'].errors?.pattern"> Cantidad inválida </span>
               <br>
       
               <strong>TELAS</strong><br>
@@ -181,7 +187,9 @@
                 <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
               </select>
               <span class="errors" *ngIf="detalleOrdenForm.controls['f_telas'].errors?.required"> Obligatorio </span>
-              <input placeholder="Cantidad en Metros" formControlName="f_cantidadTelas"><br>
+              <input placeholder="Cantidad en Metros" formControlName="f_cantidadTelas">
+              <br>
+              <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadTelas'].errors?.pattern"> Cantidad inválida </span>
               <br>
               <a type="button" (click)="postDataDetalleOrden()" class="but">
                 <span></span>
