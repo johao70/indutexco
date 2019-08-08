@@ -79,7 +79,7 @@
 
           <form [formGroup]="clienteForm" autocomplete="off">
               <strong>IDENTIFICACIÓN</strong><br>
-              <input formControlName="identificacion" placeholder="Cédula o RUC">
+              <input formControlName="identificacion" placeholder="Cédula">
               <span class="errors" *ngIf="clienteForm.controls['identificacion'].errors?.required"> Obligatorio </span>
               <span class="errors" *ngIf="clienteForm.controls['identificacion'].errors?.pattern"> Inválido </span>
               <br><br>
