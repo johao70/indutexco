@@ -1,18 +1,16 @@
 @import "../../scss/variables";
 
-body
-{
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    bottom: 0%;
-    right: 0%;
-    width: 100%;
-    background-color: $silver;
+body {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  bottom: 0%;
+  right: 0%;
+  width: 100%;
+  background-color: $silver;
 }
 
-h2
-{
-    text-align: center;
-    line-height: 0em;
+h2 {
+  text-align: center;
+  line-height: 0em;
 }

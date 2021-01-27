@@ -3,12 +3,11 @@
 
 @include tables(5%, $medium_blue);
 
-body
-{
-    position: absolute;
-    top: 10%;
-    left: 5%;
-    right: 5%;
-    margin: 0%;
-    padding: 0%;
+body {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  margin: 0%;
+  padding: 0%;
 }

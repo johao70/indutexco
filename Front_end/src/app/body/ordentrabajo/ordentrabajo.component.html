@@ -2,56 +2,90 @@
   <div class="tablediv">
     <table class="fl-table">
       <thead *ngFor="let item of table_header">
-          <th>{{item.id}}</th>
-          <th>{{item.cliente}}</th>
-          <th>{{item.fecha_orden}}</th>
-          <th></th>
+        <th>{{ item.id }}</th>
+        <th>{{ item.cliente }}</th>
+        <th>{{ item.fecha_orden }}</th>
+        <th></th>
       </thead>
 
       <tbody>
-          <tr *ngFor="let item of respuesta">
-            <td>{{ item.id }}</td>
-            <td>{{ item.idclientes }}</td>
-            <td>{{ item.fecha_orden }}</td>
-            <td>
-              <a type="button" onclick="document.getElementById('id05').style.display='block'" (click)="getDatabyID(item.id)">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <img src="../../../assets/edit-img.png" alt="edit-img" height="18" width="18">
-                </a>
-                <a type="button" href="/detalle_orden" (click)="getDatabyID(item.id)">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <img src="../../../assets/details.ico" alt="details-img" height="18" width="18">
-                </a>
-                <a type="button" (click)="deleteDataTable(item.id)">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <img src="../../../assets/delete-img.png" alt="delete-img" height="18" width="18">
-                </a>
-            </td>
-          </tr>
+        <tr *ngFor="let item of respuesta">
+          <td>{{ item.id }}</td>
+          <td>{{ item.idclientes }}</td>
+          <td>{{ item.fecha_orden }}</td>
+          <td>
+            <a
+              type="button"
+              onclick="document.getElementById('id05').style.display='block'"
+              (click)="getDatabyID(item.id)"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <img
+                src="../../../assets/edit-img.png"
+                alt="edit-img"
+                height="18"
+                width="18"
+              />
+            </a>
+            <a
+              type="button"
+              href="/detalle_orden"
+              (click)="getDatabyID(item.id)"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <img
+                src="../../../assets/details.ico"
+                alt="details-img"
+                height="18"
+                width="18"
+              />
+            </a>
+            <a type="button" (click)="deleteDataTable(item.id)">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <img
+                src="../../../assets/delete-img.png"
+                alt="delete-img"
+                height="18"
+                width="18"
+              />
+            </a>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
 
   <div class="options">
-    <strong>CLIENTE</strong><br><br>
+    <strong>CLIENTE</strong><br /><br />
     <select [(ngModel)]="idclientes" name="idclientes">
-      <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option>
-    </select><br><br><br><br>
-    <a type="button" class="cliente_modal_style" onclick="document.getElementById('id04').style.display='block'">
+      <option *ngFor="let item of respuestaClientes" value="{{ item.id }}">
+        {{ item.apellido }} {{ item.nombre }}
+      </option></select
+    ><br /><br /><br /><br />
+    <a
+      type="button"
+      class="cliente_modal_style"
+      onclick="document.getElementById('id04').style.display='block'"
+    >
       <span></span>
       <span></span>
       <span></span>
       <span></span>
-      <img src="../../../assets/new-user-img.svg" alt="new-user-img" height="18" width="18">
+      <img
+        src="../../../assets/new-user-img.svg"
+        alt="new-user-img"
+        height="18"
+        width="18"
+      />
     </a>
 
     <a type="button" (click)="postDataTable()">
@@ -63,58 +97,106 @@
     </a>
   </div>
 
-
   <!-- ---------------------------------------INICIO Modal Cliente--------------------------------------------------------- -->
 
   <div>
     <div id="id04" class="w3-modal">
       <div class="w3-modal-content">
         <header>
-          <span onclick="document.getElementById('id04').style.display='none'" class="w3-display-topright">&times;</span>
+          <span
+            onclick="document.getElementById('id04').style.display='none'"
+            class="w3-display-topright"
+            >&times;</span
+          >
           <!-- <h2>Registro Cliente</h2> -->
         </header>
-        
+
         <div class="optione">
-          <img src="../../../assets/avatar-male.png">
+          <img src="../../../assets/avatar-male.png" />
 
           <form [formGroup]="clienteForm" autocomplete="off">
-              <strong>IDENTIFICACIÓN</strong><br>
-              <input formControlName="identificacion" placeholder="Cédula">
-              <span class="errors" *ngIf="clienteForm.controls['identificacion'].errors?.required"> Obligatorio </span>
-              <span class="errors" *ngIf="clienteForm.controls['identificacion'].errors?.pattern"> Inválido </span>
-              <br><br>
-  
-              <strong>NOMBRE</strong><br>
-              <input formControlName="nombres" placeholder="Nombre">
-              <span class="errors" *ngIf="clienteForm.controls['nombres'].errors?.required"> Obligatorio </span>
-              <span class="errors" *ngIf="clienteForm.controls['nombres'].errors?.pattern"> Inválido </span>
-              <br><br>
-      
-              <strong>APELLIDO</strong><br>
-              <input formControlName="apellidos" placeholder="Apellido">
-              <span class="errors" *ngIf="clienteForm.controls['apellidos'].errors?.required"> Obligatorio </span>
-              <span class="errors" *ngIf="clienteForm.controls['apellidos'].errors?.pattern"> Inválido </span>
-              <br><br>
-      
-              <strong>TELÉFONO</strong><br>
-              <input formControlName="telefonos" placeholder="Teléfono">
-              <span class="errors" *ngIf="clienteForm.controls['telefonos'].errors?.required"> Obligatorio </span>
-              <span class="errors" *ngIf="clienteForm.controls['telefonos'].errors?.pattern"> Inválido </span>
-              <br><br>
-      
-              <strong>DIRECCIÓN</strong><br>
-              <input formControlName="direcciones" placeholder="Dirección">
-              <span class="errors" *ngIf="clienteForm.controls['direcciones'].errors?.required"> Obligatorio </span>
-              <br><br>
-  
-              <a type="button" (click)="postDataClientes()" class="but">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Guardar
-              </a>
-            </form>
+            <strong>IDENTIFICACIÓN</strong><br />
+            <input formControlName="identificacion" placeholder="Cédula" />
+            <span
+              class="errors"
+              *ngIf="clienteForm.controls['identificacion'].errors?.required"
+            >
+              Obligatorio
+            </span>
+            <span
+              class="errors"
+              *ngIf="clienteForm.controls['identificacion'].errors?.pattern"
+            >
+              Inválido
+            </span>
+            <br /><br />
+
+            <strong>NOMBRE</strong><br />
+            <input formControlName="nombres" placeholder="Nombre" />
+            <span
+              class="errors"
+              *ngIf="clienteForm.controls['nombres'].errors?.required"
+            >
+              Obligatorio
+            </span>
+            <span
+              class="errors"
+              *ngIf="clienteForm.controls['nombres'].errors?.pattern"
+            >
+              Inválido
+            </span>
+            <br /><br />
+
+            <strong>APELLIDO</strong><br />
+            <input formControlName="apellidos" placeholder="Apellido" />
+            <span
+              class="errors"
+              *ngIf="clienteForm.controls['apellidos'].errors?.required"
+            >
+              Obligatorio
+            </span>
+            <span
+              class="errors"
+              *ngIf="clienteForm.controls['apellidos'].errors?.pattern"
+            >
+              Inválido
+            </span>
+            <br /><br />
+
+            <strong>TELÉFONO</strong><br />
+            <input formControlName="telefonos" placeholder="Teléfono" />
+            <span
+              class="errors"
+              *ngIf="clienteForm.controls['telefonos'].errors?.required"
+            >
+              Obligatorio
+            </span>
+            <span
+              class="errors"
+              *ngIf="clienteForm.controls['telefonos'].errors?.pattern"
+            >
+              Inválido
+            </span>
+            <br /><br />
+
+            <strong>DIRECCIÓN</strong><br />
+            <input formControlName="direcciones" placeholder="Dirección" />
+            <span
+              class="errors"
+              *ngIf="clienteForm.controls['direcciones'].errors?.required"
+            >
+              Obligatorio
+            </span>
+            <br /><br />
+
+            <a type="button" (click)="postDataClientes()" class="but">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Guardar
+            </a>
+          </form>
         </div>
       </div>
     </div>
@@ -122,82 +204,177 @@
 
   <!-- ---------------------------------------FIN Modal Cliente--------------------------------------------------------- -->
 
-
   <!-- ---------------------------------------INICIO Modal Detalle_Ordenes--------------------------------------------------------- -->
 
   <div class="w3-container">
     <div id="id05" class="w-modal">
       <div class="w3-modal-content">
         <header>
-          <span onclick="document.getElementById('id05').style.display='none'" class="w3-display-topright">&times;</span>
+          <span
+            onclick="document.getElementById('id05').style.display='none'"
+            class="w3-display-topright"
+            >&times;</span
+          >
           <!-- <h2>Detalle Orden</h2> -->
         </header>
-              
+
         <div class="optione">
-
           <form [formGroup]="detalleOrdenForm" autocomplete="off">
-              <strong>TIPO DE PRENDA</strong><br>
-              <select formControlName="f_tipoPrenda">
-                <option *ngFor="let item of respuestaTipoPrenda" value={{item.id}}>{{item.nombre}}</option>
-              </select>
-              <span class="errors" *ngIf="detalleOrdenForm.controls['f_tipoPrenda'].errors?.required"> Obligatorio </span>
-              <br><br>
-  
-              <strong>TALLA DE LA PRENDA</strong><br>
-              <select formControlName="f_tallaPrenda">
-                <option *ngFor="let item of respuestaTallaPrenda" value={{item.id}}>{{item.nombre}}</option>
-              </select>
-              <span class="errors" *ngIf="detalleOrdenForm.controls['f_tallaPrenda'].errors?.required"> Obligatorio </span>
-              <br><br>
-  
-              <strong>ETIQUETAS</strong><br>
-              <select formControlName="f_etiquetas">
-                <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.nombre}}</option>
-              </select>
-              <span class="errors" *ngIf="detalleOrdenForm.controls['f_etiquetas'].errors?.required"> Obligatorio </span>
-              <input placeholder="Cantidad" formControlName="f_cantidadEtiquetas">
-              <br>
-              <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadEtiquetas'].errors?.pattern"> Cantidad inválida </span>
-              <br>
-      
-              <strong>BOTONES</strong><br>
-              <select formControlName="f_botones">
-                <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
-              </select>
-              <span class="errors" *ngIf="detalleOrdenForm.controls['f_botones'].errors?.required"> Obligatorio </span>
-              <input placeholder="Cantidad" formControlName="f_cantidadBotones">
-              <br>
-              <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadBotones'].errors?.pattern"> Cantidad inválida </span>
-              <br>
-      
-              <strong>HILOS</strong><br>
-              <select formControlName="f_hilos">
-                <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.nombre}}</option>
-              </select>
-              <span class="errors" *ngIf="detalleOrdenForm.controls['f_hilos'].errors?.required"> Obligatorio</span>
-              <input placeholder="Cantidad" formControlName="f_cantidadHilos">
-              <br>
-              <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadHilos'].errors?.pattern"> Cantidad inválida </span>
-              <br>
-      
-              <strong>TELAS</strong><br>
-              <select formControlName="f_telas">
-                <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
-              </select>
-              <span class="errors" *ngIf="detalleOrdenForm.controls['f_telas'].errors?.required"> Obligatorio </span>
-              <input placeholder="Cantidad en Metros" formControlName="f_cantidadTelas">
-              <br>
-              <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadTelas'].errors?.pattern"> Cantidad inválida </span>
-              <br>
-              <a type="button" (click)="postDataDetalleOrden()" class="but">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Guardar
-              </a>
-            </form>
+            <strong>TIPO DE PRENDA</strong><br />
+            <select formControlName="f_tipoPrenda">
+              <option
+                *ngFor="let item of respuestaTipoPrenda"
+                value="{{ item.id }}"
+              >
+                {{ item.nombre }}
+              </option>
+            </select>
+            <span
+              class="errors"
+              *ngIf="detalleOrdenForm.controls['f_tipoPrenda'].errors?.required"
+            >
+              Obligatorio
+            </span>
+            <br /><br />
 
+            <strong>TALLA DE LA PRENDA</strong><br />
+            <select formControlName="f_tallaPrenda">
+              <option
+                *ngFor="let item of respuestaTallaPrenda"
+                value="{{ item.id }}"
+              >
+                {{ item.nombre }}
+              </option>
+            </select>
+            <span
+              class="errors"
+              *ngIf="
+                detalleOrdenForm.controls['f_tallaPrenda'].errors?.required
+              "
+            >
+              Obligatorio
+            </span>
+            <br /><br />
+
+            <strong>ETIQUETAS</strong><br />
+            <select formControlName="f_etiquetas">
+              <option
+                *ngFor="let item of respuestaEtiquetas"
+                value="{{ item.id }}"
+              >
+                {{ item.nombre }}
+              </option>
+            </select>
+            <span
+              class="errors"
+              *ngIf="detalleOrdenForm.controls['f_etiquetas'].errors?.required"
+            >
+              Obligatorio
+            </span>
+            <input
+              placeholder="Cantidad"
+              formControlName="f_cantidadEtiquetas"
+            />
+            <br />
+            <span
+              class="errors"
+              style="position: absolute; left: 60%"
+              *ngIf="
+                detalleOrdenForm.controls['f_cantidadEtiquetas'].errors?.pattern
+              "
+            >
+              Cantidad inválida
+            </span>
+            <br />
+
+            <strong>BOTONES</strong><br />
+            <select formControlName="f_botones">
+              <option
+                *ngFor="let item of respuestaBotones"
+                value="{{ item.id }}"
+              >
+                {{ item.nombre }}
+              </option>
+            </select>
+            <span
+              class="errors"
+              *ngIf="detalleOrdenForm.controls['f_botones'].errors?.required"
+            >
+              Obligatorio
+            </span>
+            <input placeholder="Cantidad" formControlName="f_cantidadBotones" />
+            <br />
+            <span
+              class="errors"
+              style="position: absolute; left: 60%"
+              *ngIf="
+                detalleOrdenForm.controls['f_cantidadBotones'].errors?.pattern
+              "
+            >
+              Cantidad inválida
+            </span>
+            <br />
+
+            <strong>HILOS</strong><br />
+            <select formControlName="f_hilos">
+              <option *ngFor="let item of respuestaHilos" value="{{ item.id }}">
+                {{ item.nombre }}
+              </option>
+            </select>
+            <span
+              class="errors"
+              *ngIf="detalleOrdenForm.controls['f_hilos'].errors?.required"
+            >
+              Obligatorio</span
+            >
+            <input placeholder="Cantidad" formControlName="f_cantidadHilos" />
+            <br />
+            <span
+              class="errors"
+              style="position: absolute; left: 60%"
+              *ngIf="
+                detalleOrdenForm.controls['f_cantidadHilos'].errors?.pattern
+              "
+            >
+              Cantidad inválida
+            </span>
+            <br />
+
+            <strong>TELAS</strong><br />
+            <select formControlName="f_telas">
+              <option *ngFor="let item of respuestaTelas" value="{{ item.id }}">
+                {{ item.nombre }}
+              </option>
+            </select>
+            <span
+              class="errors"
+              *ngIf="detalleOrdenForm.controls['f_telas'].errors?.required"
+            >
+              Obligatorio
+            </span>
+            <input
+              placeholder="Cantidad en Metros"
+              formControlName="f_cantidadTelas"
+            />
+            <br />
+            <span
+              class="errors"
+              style="position: absolute; left: 60%"
+              *ngIf="
+                detalleOrdenForm.controls['f_cantidadTelas'].errors?.pattern
+              "
+            >
+              Cantidad inválida
+            </span>
+            <br />
+            <a type="button" (click)="postDataDetalleOrden()" class="but">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Guardar
+            </a>
+          </form>
         </div>
       </div>
     </div>
@@ -208,8 +385,12 @@
     <span></span>
     <span></span>
     <span></span>
-    <img src="../../../assets/png-img.png" alt="pdf-img" height="32" width="32">
+    <img
+      src="../../../assets/png-img.png"
+      alt="pdf-img"
+      height="32"
+      width="32"
+    />
     Guardar PDF
   </a>
-
 </body>

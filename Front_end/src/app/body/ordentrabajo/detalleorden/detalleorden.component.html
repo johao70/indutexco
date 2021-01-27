@@ -1,44 +1,53 @@
 <body>
-    <h2>Resumen</h2>
-    <div class="table-wrapper">
-        <table class="fl-table">
-            <thead *ngFor="let item of table_header">
-                <th>{{item.idBoton}}</th>
-                <th>{{item.botonCantidad}}</th>
-                <th>{{item.idTela}}</th>
-                <th>{{item.telaCantidad}}</th>
-                <th>{{item.idHilo}}</th>
-                <th>{{item.hiloCantidad}}</th>
-                <th>{{item.idEtiqueta}}</th>
-                <th>{{item.etiquetaCantidad}}</th>
-                <th>{{item.idTipoPrenda}}</th>
-                <th>{{item.idTallaPrenda}}</th>
-                <th></th>
-            </thead>
+  <h2>Resumen</h2>
+  <div class="table-wrapper">
+    <table class="fl-table">
+      <thead *ngFor="let item of table_header">
+        <th>{{ item.idBoton }}</th>
+        <th>{{ item.botonCantidad }}</th>
+        <th>{{ item.idTela }}</th>
+        <th>{{ item.telaCantidad }}</th>
+        <th>{{ item.idHilo }}</th>
+        <th>{{ item.hiloCantidad }}</th>
+        <th>{{ item.idEtiqueta }}</th>
+        <th>{{ item.etiquetaCantidad }}</th>
+        <th>{{ item.idTipoPrenda }}</th>
+        <th>{{ item.idTallaPrenda }}</th>
+        <th></th>
+      </thead>
 
-            <tbody>
-                <tr *ngFor="let item of respuesta">
-                    <td>{{item.idboton}}</td>
-                    <td>{{item.boton_cantidad}}</td>
-                    <td>{{item.idtela}}</td>
-                    <td>{{item.tela_cantidad}}</td>
-                    <td>{{item.idhilo}}</td>
-                    <td>{{item.hilo_cantidad}}</td>
-                    <td>{{item.idetiqueta}}</td>
-                    <td>{{item.etiqueta_cantidad}}</td>
-                    <td>{{item.idtipoprenda}}</td>
-                    <td>{{item.idtallaprendas}}</td>
-                    <td>
-                        <a type="button" (click)="deleteDataTable(item.id)" routerLink="/ordentrabajo">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <img src="../../../assets/delete-img.png" alt="delete-img" height="18" width="18">
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+      <tbody>
+        <tr *ngFor="let item of respuesta">
+          <td>{{ item.idboton }}</td>
+          <td>{{ item.boton_cantidad }}</td>
+          <td>{{ item.idtela }}</td>
+          <td>{{ item.tela_cantidad }}</td>
+          <td>{{ item.idhilo }}</td>
+          <td>{{ item.hilo_cantidad }}</td>
+          <td>{{ item.idetiqueta }}</td>
+          <td>{{ item.etiqueta_cantidad }}</td>
+          <td>{{ item.idtipoprenda }}</td>
+          <td>{{ item.idtallaprendas }}</td>
+          <td>
+            <a
+              type="button"
+              (click)="deleteDataTable(item.id)"
+              routerLink="/ordentrabajo"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <img
+                src="../../../assets/delete-img.png"
+                alt="delete-img"
+                height="18"
+                width="18"
+              />
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>

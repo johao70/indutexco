@@ -1,19 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { BodyComponent } from './body/body.component';
-import { PersonalComponent } from './body/personal/personal.component';
-import { InventarioComponent } from './body/inventario/inventario.component';
-import { OrdentrabajoComponent } from './body/ordentrabajo/ordentrabajo.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./header/header.component";
+import { FooterComponent } from "./footer/footer.component";
+import { SidebarComponent } from "./sidebar/sidebar.component";
+import { BodyComponent } from "./body/body.component";
+import { PersonalComponent } from "./body/personal/personal.component";
+import { InventarioComponent } from "./body/inventario/inventario.component";
+import { OrdentrabajoComponent } from "./body/ordentrabajo/ordentrabajo.component";
 
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { DetalleordenComponent } from './body/ordentrabajo/detalleorden/detalleorden.component';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { DetalleordenComponent } from "./body/ordentrabajo/detalleorden/detalleorden.component";
 
 @NgModule({
   declarations: [
@@ -25,16 +25,16 @@ import { DetalleordenComponent } from './body/ordentrabajo/detalleorden/detalleo
     PersonalComponent,
     InventarioComponent,
     OrdentrabajoComponent,
-    DetalleordenComponent
+    DetalleordenComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

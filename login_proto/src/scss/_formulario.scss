@@ -1,118 +1,114 @@
-*
-{
-    margin: 0%;
-    padding: 0%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+* {
+  margin: 0%;
+  padding: 0%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.form-container{
-    width: 500px;
-    background: rgba(0, 0, 0,.5);
-    padding: 35px 45px 35px 50px;
-    margin: auto;
-    margin-top: 75px;
-    border-radius: 9px;
+.form-container {
+  width: 500px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 35px 45px 35px 50px;
+  margin: auto;
+  margin-top: 75px;
+  border-radius: 9px;
 }
 
-.form-container input[type= "text"],
-.form-container input[type= "password"],
-.form-container input[type= "text"],
-.form-container input[type= "email"]{
-    color:$cafe;
-    font-family: $letra;
-    font-size: 18px;
-    line-height: 22px;
-    background:rgba(0, 0, 0,.5);
-    padding: 13px 13px 13px 54px;
-    margin-bottom: 10px;
-    width: 100%;
-    border-radius: 30px;
-    box-sizing: border-box;
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="text"],
+.form-container input[type="email"] {
+  color: $cafe;
+  font-family: $letra;
+  font-size: 18px;
+  line-height: 22px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 13px 13px 13px 54px;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 30px;
+  box-sizing: border-box;
 }
 
-.form-container input[type= "text"],
-.form-container input[type= "password"],
-.form-container input[type= "text"],
-.form-container input[type= "email"]:focus
-{
-    background: rgba(0, 0, 0,.7);
-    border: 3px solid $marron;
-    color: $white;
-    border-radius: 30px;
-    padding: 13px 13px 13px 54px;
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="text"],
+.form-container input[type="email"]:focus {
+  background: rgba(0, 0, 0, 0.7);
+  border: 3px solid $marron;
+  color: $white;
+  border-radius: 30px;
+  padding: 13px 13px 13px 54px;
 }
-
-
 
 //titulo
-.form-container{
-    h1{
-        text-align: center;
-        margin-bottom: 30px;
-    }
+.form-container {
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
 }
 
 //boton
-#enviar{
-    @include letra_ti;
-    box-sizing: border-box;
-    float: left;
-    width: 100%;
-    border: $cafe solid 4px;
-    cursor: pointer;
-    background-color: $cafe;
-    color: $white;
-    font-size: 20px; 
-    font-weight: 670px;
-    padding-top: 22px;
-    transition: all .3s;
-    border-radius: 30px;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    -ms-transition:all 0.3s;
-    -webkit-transition: all 0.3;
+#enviar {
+  @include letra_ti;
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  border: $cafe solid 4px;
+  cursor: pointer;
+  background-color: $cafe;
+  color: $white;
+  font-size: 20px;
+  font-weight: 670px;
+  padding-top: 22px;
+  transition: all 0.3s;
+  border-radius: 30px;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -webkit-transition: all 0.3;
 }
 
-.form-container .btn-send{
-    box-sizing: border-box;
-    width: 100%;
-    padding: 3%;
-    background:$celeste;
-    border-bottom: 2px solid $celeste;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;
-    color:#fff;
-    font-size: $tamaño-letra;
-    margin-top: 5px;
-}
-
-//efecto del boton
-.form-container .btn-send:hover:not([disabled]){ 
-    background: $verde;
-    transition: all 0.5s;
-    padding: 3%;
+.form-container .btn-send {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3%;
+  background: $celeste;
+  border-bottom: 2px solid $celeste;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #fff;
+  font-size: $tamaño-letra;
+  margin-top: 5px;
 }
 
 //efecto del boton
-#enviar:hover{ 
-    background-color: rgba(0, 0, 0,.7);
-    color:$white;
-    border-radius: 30px;
-    width: 100%;
+.form-container .btn-send:hover:not([disabled]) {
+  background: $verde;
+  transition: all 0.5s;
+  padding: 3%;
 }
 
-.transition{
-    width: 0px;
-    height: 74px;
-    background-color: $cafe;
-    transition:  .7s ease;
-    -moz-transition: all 0.7s;
-    -o-transition: all 0.7s;
-    -ms-transition:all 0.7s;
-    -webkit-transition: all 0.7;
+//efecto del boton
+#enviar:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: $white;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.transition {
+  width: 0px;
+  height: 74px;
+  background-color: $cafe;
+  transition: 0.7s ease;
+  -moz-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -webkit-transition: all 0.7;
 }
 
 // .colorbutton{
@@ -120,46 +116,39 @@
 // }
 
 //clase para los mensajes
-.alert-danger{
-    background: #ec4856;
-    margin: 2px;
-    border-radius: 30px;
+.alert-danger {
+  background: #ec4856;
+  margin: 2px;
+  border-radius: 30px;
 }
-
 
 //tamano del mensaje error
-.container-error-message{
-    padding: 3px;
-
+.container-error-message {
+  padding: 3px;
 }
-
 
 //pantalla responsiva
-@media only screen and (max-width: 500px)
-{
-    .form-container
-    {
-        left: 3%;
-        margin-right: 3%;
-        width: 88%;
-        margin-left: 0;
-        padding-left: 3%;
-        padding-right: 3%;
-    }
+@media only screen and (max-width: 500px) {
+  .form-container {
+    left: 3%;
+    margin-right: 3%;
+    width: 88%;
+    margin-left: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
 }
 
-#contrasena
-{
-    background-image: url('./assets/img/password.svg');
-    background-size: 30px 20px;
-    background-position:11px 11px;
-    background-repeat: no-repeat;
+#contrasena {
+  background-image: url("./assets/img/password.svg");
+  background-size: 30px 20px;
+  background-position: 11px 11px;
+  background-repeat: no-repeat;
 }
 
-#email
-{
-    background-image: url('./assets/img/58485771a6aca45b5a5c95b8.png');
-    background-size: 30px 20px;
-    background-position:11px 11px;
-    background-repeat: no-repeat;
+#email {
+  background-image: url("./assets/img/58485771a6aca45b5a5c95b8.png");
+  background-size: 30px 20px;
+  background-position: 11px 11px;
+  background-repeat: no-repeat;
 }

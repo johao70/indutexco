@@ -4,8 +4,7 @@
 @include sidebar($silver);
 @include buttons($black, $silver);
 
-.colors
-{
-    position: absolute;
-    bottom: 5%;
+.colors {
+  position: absolute;
+  bottom: 5%;
 }

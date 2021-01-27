@@ -1,41 +1,52 @@
 <body>
-    <div class= "form-container">
-        <form [formGroup]="contactForm">
-            
-            <h1>INDUTEXCO</h1>
-            <input type="text"  id="email" formControlName= "email"  placeholder="Email">
-            <div class=" alert-danger" *ngIf="email.invalid && (email.touched)">
-                <div class="container-error-message" *ngIf="email.errors.required">
-                    Ingresa tu correo electronico
-                </div>
-                <div class="container-error-message" *ngIf="email.errors.minlength">
-                    Email de minimo 5 caracteres
-                </div>
-                <div class="container-error-message" *ngIf=" email.errors.pattern">
-                    Email debe ser valido
-                </div> 
-                </div>  
+  <div class="form-container">
+    <form [formGroup]="contactForm">
+      <h1>INDUTEXCO</h1>
+      <input
+        type="text"
+        id="email"
+        formControlName="email"
+        placeholder="Email"
+      />
+      <div class="alert-danger" *ngIf="email.invalid && email.touched">
+        <div class="container-error-message" *ngIf="email.errors.required">
+          Ingresa tu correo electronico
+        </div>
+        <div class="container-error-message" *ngIf="email.errors.minlength">
+          Email de minimo 5 caracteres
+        </div>
+        <div class="container-error-message" *ngIf="email.errors.pattern">
+          Email debe ser valido
+        </div>
+      </div>
 
-            <input type="password"  id="contrasena" formControlName= "password"  placeholder="Contraseña">
-                <div class="alert-danger" *ngIf="password.invalid && (password.touched)">
-                <div class=" container-error-message" *ngIf= "password.errors.required">
-                    Campo Requerido
-                </div>
-                <div class="container-error-message" *ngIf ="password.errors.minlength">
-                    minimo 5 caracteres entre numeros y letras
-                </div>
-            </div>
+      <input
+        type="password"
+        id="contrasena"
+        formControlName="password"
+        placeholder="Contraseña"
+      />
+      <div class="alert-danger" *ngIf="password.invalid && password.touched">
+        <div class="container-error-message" *ngIf="password.errors.required">
+          Campo Requerido
+        </div>
+        <div class="container-error-message" *ngIf="password.errors.minlength">
+          minimo 5 caracteres entre numeros y letras
+        </div>
+      </div>
 
-            <div class="enviar">
-                <button type="submit" id="enviar" (click)="OnSaveForm()">INGRESAR</button>               
-            </div>
-            
-            <!-- <button class="colorbutton  secundario "  data-dismiss="alert">  ADVERTENCIA  <span>&times;</span></button>
+      <div class="enviar">
+        <button type="submit" id="enviar" (click)="OnSaveForm()">
+          INGRESAR
+        </button>
+      </div>
+
+      <!-- <button class="colorbutton  secundario "  data-dismiss="alert">  ADVERTENCIA  <span>&times;</span></button>
             <button class="alerta" class="colorbutton alerta "  data-dismiss="alert">  ERROR  <span>&times;</span></button> 
             <button class="colorbutton   verde"  data-dismiss="alert">  GUARDADO  <span>&times;</span></button>-->
 
-            <!--   <button type= "submit" class="btn-send"  [disabled]= "!contactForm.valid"  (ngSubmit)="OnSaveForm()">Ingresar</button>  -->            
-            <div class="transition"></div>
-        </form>
-    </div>
+      <!--   <button type= "submit" class="btn-send"  [disabled]= "!contactForm.valid"  (ngSubmit)="OnSaveForm()">Ingresar</button>  -->
+      <div class="transition"></div>
+    </form>
+  </div>
 </body>

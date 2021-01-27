@@ -1,26 +1,26 @@
 <body>
   <div class="sidebar">
-      <div class="label">
-        <img src="../../assets/sidebar-img.png" alt="" />
-      </div>
-      <br>
-      <br><br>
-      <a routerLink="ordentrabajo">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        ORDEN DE TRABAJO
-      </a>
-      <hr>
-      <!-- <a routerLink="personal">
+    <div class="label">
+      <img src="../../assets/sidebar-img.png" alt="" />
+    </div>
+    <br />
+    <br /><br />
+    <a routerLink="ordentrabajo">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      ORDEN DE TRABAJO
+    </a>
+    <hr />
+    <!-- <a routerLink="personal">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         PERSONAL
       </a> -->
-      <!-- <hr>
+    <!-- <hr>
       <a routerLink="inventario">
         <span></span>
         <span></span>
@@ -28,11 +28,11 @@
         <span></span>
         INVENTARIO
       </a> -->
-      <div class="colors">
-        <form  #gsForm="ngForm" (ngSubmit)="onSubmit(gsForm)">
-          <input #cardColor name="globalColor" type="color" ngModel>
-          <button type="submit">Aplicar</button>
-        </form> 
-      </div>
+    <div class="colors">
+      <form #gsForm="ngForm" (ngSubmit)="onSubmit(gsForm)">
+        <input #cardColor name="globalColor" type="color" ngModel />
+        <button type="submit">Aplicar</button>
+      </form>
+    </div>
   </div>
 </body>

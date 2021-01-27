@@ -1,42 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+import { HttpClient } from "@angular/common/http";
+import { environment } from "../../../environments/environment";
 
 @Component({
-  selector: 'app-personal',
-  templateUrl: './personal.component.html',
-  styleUrls: ['./personal.component.scss']
+  selector: "app-personal",
+  templateUrl: "./personal.component.html",
+  styleUrls: ["./personal.component.scss"],
 })
 export class PersonalComponent implements OnInit {
+  respuesta: any[];
+  table_header: any;
 
-  respuesta: any[]
-  table_header: any
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.getData()
+    this.getData();
     this.table_header = [
       {
-        id: 'N°',
-        nombre: 'Nombre',
-        apellido: 'Apellido',
-        direccion: 'Dirección',
-        telefono: 'Teléfono',
+        id: "N°",
+        nombre: "Nombre",
+        apellido: "Apellido",
+        direccion: "Dirección",
+        telefono: "Teléfono",
         // idDepartamento: 'idDepartamento',
         // idCargo: 'idCargo',
         // idEstado: 'idEstado'
-      }
-    ]
+      },
+    ];
   }
 
   getData = () => {
-    let tabla = 'empleado'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-        .subscribe(data => {
-            this.respuesta = data.datos
-        })
-  }
-
+    let tabla = "empleado";
+    this.http
+      .get<any>(environment.API_URL + `?tabla=${tabla}`)
+      .subscribe((data) => {
+        this.respuesta = data.datos;
+      });
+  };
 }

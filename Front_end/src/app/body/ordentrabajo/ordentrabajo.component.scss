@@ -7,28 +7,24 @@
 @include buttons($medium_blue, $silver);
 @include modal;
 
-body
-{
-    margin: 0%;
-    // padding: 55%;
-    @include w3modal;
-    @include wmodal;
+body {
+  margin: 0%;
+  // padding: 55%;
+  @include w3modal;
+  @include wmodal;
 }
-.cliente_modal_style
-{
-    position: absolute;
-    top: 0;
-    right: 0; 
+.cliente_modal_style {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-.errors
-{
-    border: 2px solid red;
-    color: red;
+.errors {
+  border: 2px solid red;
+  color: red;
 }
-.pdf
-{
-    position: absolute;
-    bottom: 5%;
-    left: 80%;
+.pdf {
+  position: absolute;
+  bottom: 5%;
+  left: 80%;
 }
