@@ -22,7 +22,7 @@
     "chart.js": "^2.9.4",
     "jspdf": "^1.5.3",
     "jspdf-autotable": "^3.5.13",
-    "rxjs": "~6.4.0",
+    "rxjs": "~6.6.3",
     "sweetalert2": "^8.19.0",
     "tslib": "^1.14.1",
     "zone.js": "~0.9.1"
