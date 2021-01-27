@@ -1,14 +1,13 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex("materialtelas")
+  return knex("cargos")
     .del()
     .then(function () {
       // Inserts seed entries
-      return knex("materialtelas").insert([
+      return knex("cargos").insert([
         {
           id: 1,
-          material: "material1",
-          caracteristica: "caracteristica1",
+          nombre: "cargo1",
         },
       ]);
     });

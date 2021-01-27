@@ -1,15 +1,15 @@
-;
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('colorbotones').del()
+  return knex("colorbotones")
+    .del()
     .then(function () {
       // Inserts seed entries
-      return knex('colorbotones').insert([
+      return knex("colorbotones").insert([
         {
-          id: 1, 
-          color: 'negro',
-          descripcion: 'descripcionNegro'
-        }
+          id: 1,
+          color: "negro",
+          descripcion: "descripcionNegro",
+        },
       ]);
     });
 };
